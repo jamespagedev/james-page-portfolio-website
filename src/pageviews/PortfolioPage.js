@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Colors } from '../globals/CssMixins.js';
 
 // Components
 import TopSection from '../components/Portfolio/TopSection.js';

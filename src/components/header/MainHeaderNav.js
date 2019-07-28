@@ -37,7 +37,7 @@ const LinkIntroSkills = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 300;
   font-style: normal;
   font-family: sans-serif;
@@ -57,7 +57,7 @@ const LinkPortfolio = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 300;
   font-style: normal;
   font-family: sans-serif;
@@ -77,7 +77,7 @@ const LinkCareer = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.6rem;
   font-weight: 300;
   font-style: normal;
   font-family: sans-serif;
