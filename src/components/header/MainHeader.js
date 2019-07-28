@@ -26,6 +26,7 @@ const H1Logo = styled.h1`
   filter: contrast(1.75);
   font-family: 'Charm', cursive;
   text-shadow: 2px 3px rgba(0, 0, 0, 0.7);
+  font-size: 3.2rem;
 `;
 
 /***************************************************************************************************

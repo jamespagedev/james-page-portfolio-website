@@ -2,22 +2,45 @@ import React from 'react';
 import styled from 'styled-components';
 
 /********************************************** Styles ********************************************/
-// Note: phone view 650 width.
-
 const DivMidBackground = styled.div`
   display: flex;
-  min-height: calc(100% - 60px);
   width: 100%;
-  background-color: #004E95;
-  background: linear-gradient(85deg, #013A6B 49.75%, #7FFF00 50%, #7FFF00 calc(50% + 3px), #004E95 calc(50% + 4px));
-`;
+  background-color: #004e95;
+  position: relative;
 
-const DivMid = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    background-color: #013a6b;
+    z-index: 2;
+    clip-path: polygon(0% 100%, 55.5% 100%, 44.5% 0%, 0% 0%);
 
-  @media (max-width: 660px) {
+    @media (max-width: 900px) {
+      display: none
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #7FFF00;
+    z-index: 1;
+    clip-path: polygon(0% 100%, 56% 100%, 45% 0%, 0% 0%);
+
+    @media (max-width: 900px) {
+      display: none
+    }
+  }
+
+  @media (max-width: 900px) {
     flex-direction: column;
   }
 `;
@@ -25,15 +48,14 @@ const DivMid = styled.div`
 const DivProjectSection = styled.div`
   display: flex;
   flex-direction: column;
-  width: 49%;
+  width: 50%;
+  z-index: 3;
 
   @media (max-width: 660px) {
-    min-height: calc(100% - 60px);
     width: 100%;
     align-items: center;
     border-top: 2px solid #7FFF00;
     border-bottom: 2px solid #7FFF00;
-    background-color: #004E95;
   }
 `;
 
@@ -41,7 +63,6 @@ const DivProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 90%;
-  height: 100%;
   align-items: center;
   padding-left: 25px;
 
@@ -54,7 +75,6 @@ const DivProject = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 25%;
   background: gray;
   margin-bottom: 25px;
 `;
@@ -62,15 +82,13 @@ const DivProject = styled.div`
 const DivResumeSection = styled.div`
   display: flex;
   flex-direction: column;
-  width: 48%;
+  width: 50%;
   align-items: flex-end;
 
   @media (max-width: 660px) {
-    min-height: calc(100% - 60px);
     width: 100%;
     border-top: 2px solid #7FFF00;
     border-bottom: 2px solid #7FFF00;
-    background-color: #013A6B;
     align-items: center;
   }
 `;
@@ -101,7 +119,6 @@ const DivResumeContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 100%;
   padding: 0 20px;
 
   @media (max-width: 500px) {
@@ -195,7 +212,6 @@ const PResumeTitle = styled.p`
 const MidSection = props => {
   return (
     <DivMidBackground>
-      <DivMid>
         <DivProjectSection>
           <H1Projects>Project(s)</H1Projects>
           <DivProjectsContainer>
@@ -247,7 +263,6 @@ const MidSection = props => {
             </DivResume>
           </DivResumeContainer>
         </DivResumeSection>
-      </DivMid>
     </DivMidBackground>
   );
 };
