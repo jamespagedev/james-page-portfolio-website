@@ -18,11 +18,27 @@ const DivWrapper = styled.div`
   margin: 0;
   background: ${Colors.Vulcan};
   width: 60%;
-  height: 54px;
+  height: 14rem;
   justify-content: center;
 
   @media (max-width: 1200px) {
     width: 70%;
+  }
+
+  @media (max-width: 2600px) {
+    height: 11rem;
+  }
+
+  @media (max-width: 2100px) {
+    height: 10rem;
+  }
+
+  @media (max-width: 1800px) {
+    height: 9rem;
+  }
+
+  @media (max-width: 1300px) {
+    height: 8rem;
   }
 `;
 
@@ -33,18 +49,34 @@ const Nav = styled.nav`
   justify-content: space-evenly;
 `;
 
-const LinkIntroSkills = styled(Link)`
+const LinkHome = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 5rem;
   font-weight: 300;
   font-style: normal;
   font-family: sans-serif;
   letter-spacing: 0.2em;
   width: 100%;
-  color: ${props => (props.selectedmainheaderpage === 'true' ? `#7fff00` : `white`)};
+  color: ${props => (props.selectedmainheaderpage === 'true' ? `#ababab` : `white`)};
   text-decoration: none;
+
+  @media (max-width: 2600px) {
+    font-size: 4.2rem;
+  }
+
+  @media (max-width: 2100px) {
+    font-size: 3.4rem;
+  }
+
+  @media (max-width: 1800px) {
+    font-size: 2.4rem;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: 1.6rem;
+  }
 
   &:hover {
     transition: all 0.4s ease-in;
@@ -57,14 +89,30 @@ const LinkPortfolio = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 5rem;
   font-weight: 300;
   font-style: normal;
   font-family: sans-serif;
   letter-spacing: 0.2em;
   width: 100%;
-  color: ${props => (props.selectedmainheaderpage === 'true' ? `#7fff00` : `white`)};
+  color: ${props => (props.selectedmainheaderpage === 'true' ? `#ababab` : `white`)};
   text-decoration: none;
+
+  @media (max-width: 2600px) {
+    font-size: 4.2rem;
+  }
+
+  @media (max-width: 2100px) {
+    font-size: 3.4rem;
+  }
+
+  @media (max-width: 1800px) {
+    font-size: 2.4rem;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: 1.6rem;
+  }
 
   &:hover {
     transition: all 0.4s ease-in;
@@ -77,14 +125,30 @@ const LinkCareer = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
+  font-size: 5rem;
   font-weight: 300;
   font-style: normal;
   font-family: sans-serif;
   letter-spacing: 0.2em;
   width: 100%;
-  color: ${props => (props.selectedmainheaderpage === 'true' ? `#7fff00` : `white`)};
+  color: ${props => (props.selectedmainheaderpage === 'true' ? `#ababab` : `white`)};
   text-decoration: none;
+
+  @media (max-width: 2600px) {
+    font-size: 4.2rem;
+  }
+
+  @media (max-width: 2100px) {
+    font-size: 3.2rem;
+  }
+
+  @media (max-width: 1800px) {
+    font-size: 2.4rem;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: 1.6rem;
+  }
 
   &:hover {
     transition: all 0.4s ease-in;
@@ -100,17 +164,17 @@ const MainHeaderNav = props => {
   return (
     <DivWrapper>
       <Nav>
-        <LinkIntroSkills
-          selectedmainheaderpage={(props.pathname === ClientUrlLinks.introskills).toString()}
-          to={`${props.introSkillsSubLink}`}
+        <LinkHome
+          selectedmainheaderpage={(props.pathname === ClientUrlLinks.home).toString()}
+          to={`${props.homeSubLink}`}
         >
-          INTRO/SKILLS
-        </LinkIntroSkills>
+          HOME
+        </LinkHome>
         <LinkPortfolio
-          selectedmainheaderpage={(props.pathname === ClientUrlLinks.projectsresumes).toString()}
-          to={`${props.projectsResumesSubLink}`}
+          selectedmainheaderpage={(props.pathname === ClientUrlLinks.work).toString()}
+          to={`${props.workSubLink}`}
         >
-          PROJECTS\RESUMES
+          WORK
         </LinkPortfolio>
         <LinkCareer
           selectedmainheaderpage={(props.pathname === ClientUrlLinks.contact).toString()}

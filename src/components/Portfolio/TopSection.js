@@ -13,7 +13,7 @@ import myFaceImgImg from '../../assets/img/myFace.png';
 const DivTop = styled.div`
   display: flex;
   width: 100%;
-  margin-top: 60px;
+  margin-top: 14.5rem;
   background-color: #013a6b;
   position: relative;
 
@@ -40,13 +40,29 @@ const DivTop = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #7FFF00;
+    background-color: #4deeea;
     z-index: 1;
     clip-path: polygon(0% 100%, 45% 100%, 56% 0%, 0% 0%);
 
     @media (max-width: 900px) {
       display: none
     }
+  }
+
+  @media (max-width: 2600px) {
+    margin-top: 11.5rem;
+  }
+
+  @media (max-width: 2100px) {
+    margin-top: 10.5rem;
+  }
+
+  @media (max-width: 1800px) {
+    margin-top: 9.5rem;
+  }
+
+  @media (max-width: 1300px) {
+    margin-top: 8.5rem;
   }
 
   @media (max-width: 900px) {
@@ -68,7 +84,7 @@ const DivIntro = styled.div`
     width: 100%;
     padding: 5rem 2.5rem;
     justify-content: flex-start;
-    border-bottom: 4px solid #7FFF00;
+    border-bottom: 4px solid #4deeea;
   }
 
   @media (max-width: 900px) {
@@ -352,7 +368,7 @@ const PEducation = styled.p`
 `;
 
 /*--------------------------------------------- skills -------------------------------------------*/
-const DivTopSkills = styled.div`
+const DivSkillsSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -368,7 +384,7 @@ const DivTopSkills = styled.div`
     justify-content: center;
     clip-path: none;
     padding: 3.5rem 2.5rem 0;
-    border-bottom: 4px solid #7FFF00;
+    border-bottom: 4px solid #4deeea;
   }
 
   @media (max-width: 500px) {
@@ -413,11 +429,11 @@ const H1Skills = styled.h1`
   }
 `;
 
-const DivTopSkillsCategory = styled.div`
+const DivSkillsSectionCategory = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: ${props => props.size === 'small' ? '80%' : props.size === 'medium' ? '90%' : '100%' };
-  background: rgba(224, 224, 224, 0.5);
+  background: white;
   border-radius: 15px;
   justify-content: space-evenly;
   margin-bottom: 7rem;
@@ -497,33 +513,33 @@ const TopSection = props => {
         <PEducation>Education:</PEducation>
         <CarouselEducation />
       </DivIntro>
-      <DivTopSkills>
+      <DivSkillsSection>
         <H1Skills>Skills</H1Skills>
-        <DivTopSkillsCategory size='small'>
+        <DivSkillsSectionCategory size='small'>
           <ImgSkill top='true' src={require('../../assets/img/javascript.svg')} draggable="false" alt='javascript' />
           <ImgSkill top='true' src={require('../../assets/img/java.svg')} draggable="false" alt='java' />
           <ImgSkill top='true' src={require('../../assets/img/python.svg')} draggable="false" alt='python' />
           <ImgSkill bottom='true' src={require('../../assets/img/c.svg')} draggable="false" alt='c' />
           <ImgSkill bottom='true' src={require('../../assets/img/powershell.svg')} draggable="false" alt='powershell' />
           <ImgSkill bottom='true' src={require('../../assets/img/cpp.svg')} draggable="false" alt='cpp' />
-        </DivTopSkillsCategory>
-        <DivTopSkillsCategory size='medium'>
+        </DivSkillsSectionCategory>
+        <DivSkillsSectionCategory size='medium'>
           <ImgSkill top='true' src={require('../../assets/img/html5.svg')} draggable="false" alt='html5' />
           <ImgSkill top='true' src={require('../../assets/img/less.svg')} draggable="false" alt='less' />
           <ImgSkill top='true' src={require('../../assets/img/css.svg')} draggable="false" alt='css' />
           <ImgSkill bottom='true' src={require('../../assets/img/react.svg')} draggable="false" alt='react' />
           <ImgSkill bottom='true' src={require('../../assets/img/axios.svg')} draggable="false" alt='axios' />
           <ImgSkill bottom='true' src={require('../../assets/img/redux.svg')} draggable="false" alt='redux' />
-        </DivTopSkillsCategory>
-        <DivTopSkillsCategory bot="true" size='large'>
+        </DivSkillsSectionCategory>
+        <DivSkillsSectionCategory bot="true" size='large'>
           <ImgSkill top='true' mb="true" src={require('../../assets/img/express.svg')} draggable="false" alt='express' />
           <ImgSkill top='true' mb="true" src={require('../../assets/img/nodejs.svg')} draggable="false" alt='nodejs' />
           <ImgSkill top='true' mb="true" src={require('../../assets/img/knex.svg')} draggable="false" alt='knex' />
           <ImgSkill bottom='true' src={require('../../assets/img/postgresql.svg')} draggable="false" alt='postgresql' />
-          <ImgSkill bottom='true' src={require('../../assets/img/stripe.svg')} draggable="false" alt='stripe' />
+          <ImgSkill bottom='true' src={require('../../assets/img/StripeBlue.svg')} draggable="false" alt='stripe' />
           <ImgSkill bottom='true' src={require('../../assets/img/restfulapi.svg')} draggable="false" alt='restfulapi' />
-        </DivTopSkillsCategory>
-      </DivTopSkills>
+        </DivSkillsSectionCategory>
+      </DivSkillsSection>
     </DivTop>
   );
 };

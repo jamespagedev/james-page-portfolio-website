@@ -101,17 +101,17 @@ class App extends Component {
       <DivWrapper>
         <GlobalStyle />
         <MainHeader
-          home={`${ClientUrlLinks.home}`}
-          introSubLink={`${ClientUrlLinks.home}${ClientUrlLinks.intro}`}
-          skillsSubLink={`${ClientUrlLinks.home}${ClientUrlLinks.skills}`}
-          introSkillsSubLink={`${ClientUrlLinks.home}${ClientUrlLinks.introskills}`}
-          projectsSubLink={`${ClientUrlLinks.home}${ClientUrlLinks.projects}`}
-          resumesSubLink={`${ClientUrlLinks.home}${ClientUrlLinks.resumes}`}
-          projectsResumesSubLink={`${ClientUrlLinks.home}${ClientUrlLinks.projectsresumes}`}
-          contactSubLink={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`}
+          root={`${ClientUrlLinks.root}`}
+          homeSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.home}`}
+          introSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.intro}`}
+          skillsSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.skills}`}
+          workSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.work}`}
+          projectsSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.projects}`}
+          resumesSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.resumes}`}
+          contactSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.contact}`}
           pathname={this.props.location.hash}
         />
-        <Route path={`${ClientUrlLinks.home}`} component={PortfolioPage} />
+        <Route path={`${ClientUrlLinks.root}`} component={PortfolioPage} />
       </DivWrapper>
     );
   }

@@ -18,15 +18,32 @@ const DivWrapper = styled.div`
   position: fixed;
   z-index: 5000;
 `;
-
+// font-family: 'Charm', cursive;
 const H1Logo = styled.h1`
-  margin: 2px 0 2px 50px;
+  margin: 1.5rem 4rem 3.5rem 5rem;
   user-select: none;
-  color: ${Colors.Turquoise};
+  color: #4deeea;
   filter: contrast(1.75);
-  font-family: 'Charm', cursive;
+  font-weight: bold;
   text-shadow: 2px 3px rgba(0, 0, 0, 0.7);
-  font-size: 3.2rem;
+  font-size: 9rem;
+
+  @media (max-width: 2600px) {
+    font-size: 7rem;
+    margin: 1rem 4rem 3rem 5rem;
+  }
+
+  @media (max-width: 2100px) {
+    font-size: 6rem;
+  }
+
+  @media (max-width: 1800px) {
+    font-size: 5rem;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: 4rem;
+  }
 `;
 
 /***************************************************************************************************

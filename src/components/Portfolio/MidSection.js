@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// components
+import Projects from '../Projects/Projects.js';
+
 /********************************************** Styles ********************************************/
 const DivMidBackground = styled.div`
   display: flex;
@@ -31,7 +34,7 @@ const DivMidBackground = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #7FFF00;
+    background-color: #4deeea;
     z-index: 1;
     clip-path: polygon(0% 100%, 56% 100%, 45% 0%, 0% 0%);
 
@@ -45,40 +48,64 @@ const DivMidBackground = styled.div`
   }
 `;
 
+/*-------------------------------------------- projects ------------------------------------------*/
 const DivProjectSection = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+  align-items: flex-start;
+  padding: 0 0 0 3.5rem;
   z-index: 3;
 
-  @media (max-width: 660px) {
+  @media (max-width: 900px) {
     width: 100%;
-    align-items: center;
-    border-top: 2px solid #7FFF00;
-    border-bottom: 2px solid #7FFF00;
+    justify-content: center;
+    clip-path: none;
+    padding: 0 2.5rem 0;
+    border-bottom: 4px solid #4deeea;
+  }
+
+  @media (max-width: 500px) {
+    padding: 2rem 2.5rem 0;
   }
 `;
 
-const DivProjectsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  align-items: center;
-  padding-left: 25px;
+const H1Projects = styled.h1`
+color: white;
+margin: 0;
+width: 87%;
+text-align: center;
+user-select: none;
+font-size: 9rem;
+margin: 3.5rem 0;
 
-  @media (max-width: 660px) {
-    padding: 0;
-  }
-`;
+@media (max-width: 2600px) {
+  font-size: 7rem;
+}
 
-const DivProject = styled.div`
-  display: flex;
-  flex-direction: column;
+@media (max-width: 2100px) {
+  font-size: 6rem;
+}
+
+@media (max-width: 1800px) {
+  font-size: 5rem;
+}
+
+@media (max-width: 1300px) {
+  font-size: 4rem;
+}
+
+@media (max-width: 900px) {
   width: 100%;
-  background: gray;
-  margin-bottom: 25px;
+}
+
+@media (max-width: 500px) {
+  margin: 2rem 0;
+  font-size: 3rem;
+}
 `;
 
+/*-------------------------------------------- resumes -------------------------------------------*/
 const DivResumeSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -87,16 +114,9 @@ const DivResumeSection = styled.div`
 
   @media (max-width: 660px) {
     width: 100%;
-    border-top: 2px solid #7FFF00;
-    border-bottom: 2px solid #7FFF00;
+    border-bottom: 4px solid #4deeea;
     align-items: center;
   }
-`;
-
-const H1Projects = styled.h1`
-  align-self: center;
-  user-select: none;
-  color: white;
 `;
 
 const H1Resumes = styled.h1`
@@ -212,57 +232,52 @@ const PResumeTitle = styled.p`
 const MidSection = props => {
   return (
     <DivMidBackground>
-        <DivProjectSection>
-          <H1Projects>Project(s)</H1Projects>
-          <DivProjectsContainer>
-            <DivProject></DivProject>
-            <DivProject></DivProject>
-            <DivProject></DivProject>
-            <DivProject></DivProject>
-          </DivProjectsContainer>
-        </DivProjectSection>
-        <DivResumeSection>
-          <H1Resumes>Resume(s)</H1Resumes>
-          <H4ClickToView>(click to view)</H4ClickToView>
-          <DivResumeContainer>
-            <DivResume>
-              <AWordDownload>
-                <PResumeTitle>Front-End&nbsp;Dev</PResumeTitle>
-                <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
-              </AWordDownload>
-            </DivResume>
-            <DivResume>
-              <AWordDownload>
-                <PResumeTitle>Full&nbsp;Stack&nbsp;Dev</PResumeTitle>
-                <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
-              </AWordDownload>
-            </DivResume>
-            <DivResume>
-              <AWordDownload>
-                <PResumeTitle>Back-End&nbsp;Dev</PResumeTitle>
-                <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
-              </AWordDownload>
-            </DivResume>
-            <DivResume>
-              <AWordDownload>
-                <PResumeTitle>Software&nbsp;Dev</PResumeTitle>
-                <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
-              </AWordDownload>
-            </DivResume>
-            <DivResume>
-              <AWordDownload>
-                <PResumeTitle>IT&nbsp;Admin</PResumeTitle>
-                <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
-              </AWordDownload>
-            </DivResume>
-            <DivResume>
-              <AWordDownload>
-                <PResumeTitle>Test&nbsp;Engineer</PResumeTitle>
-                <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
-              </AWordDownload>
-            </DivResume>
-          </DivResumeContainer>
-        </DivResumeSection>
+      <DivProjectSection>
+        <H1Projects>Project(s)</H1Projects>
+        <Projects />
+      </DivProjectSection>
+      <DivResumeSection>
+        <H1Resumes>Resume(s)</H1Resumes>
+        <H4ClickToView>(click to view)</H4ClickToView>
+        <DivResumeContainer>
+          <DivResume>
+            <AWordDownload>
+              <PResumeTitle>Front-End&nbsp;Dev</PResumeTitle>
+              <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
+            </AWordDownload>
+          </DivResume>
+          <DivResume>
+            <AWordDownload>
+              <PResumeTitle>Full&nbsp;Stack&nbsp;Dev</PResumeTitle>
+              <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
+            </AWordDownload>
+          </DivResume>
+          <DivResume>
+            <AWordDownload>
+              <PResumeTitle>Back-End&nbsp;Dev</PResumeTitle>
+              <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
+            </AWordDownload>
+          </DivResume>
+          <DivResume>
+            <AWordDownload>
+              <PResumeTitle>Software&nbsp;Dev</PResumeTitle>
+              <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
+            </AWordDownload>
+          </DivResume>
+          <DivResume>
+            <AWordDownload>
+              <PResumeTitle>IT&nbsp;Admin</PResumeTitle>
+              <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
+            </AWordDownload>
+          </DivResume>
+          <DivResume>
+            <AWordDownload>
+              <PResumeTitle>Test&nbsp;Engineer</PResumeTitle>
+              <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
+            </AWordDownload>
+          </DivResume>
+        </DivResumeContainer>
+      </DivResumeSection>
     </DivMidBackground>
   );
 };
