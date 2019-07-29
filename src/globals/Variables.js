@@ -1,11 +1,11 @@
 const ClientUrlLinks = {
-  home: '/',
+  root: '/',
+  home: '#home',
   intro: '#intro',
   skills: '#skills',
-  introskills: '#intro-skills',
+  work: '#work',
   projects: '#projects',
   resumes: '#resumes',
-  projectsresumes: '#projects-resumes',
   contact: '#contact'
 };
 

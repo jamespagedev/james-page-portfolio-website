@@ -35,7 +35,7 @@ color: white;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #7FFF00;
+    background-color: #4deeea;
     z-index: 1;
     clip-path: polygon(0% 100%, 56% 100%, 56% 0%, 0% 0%);
 
