@@ -8,8 +8,6 @@ const DivWrapper = styled.div`
   background: white;
   width: 100%;
 
-  
-
   &:not(:last-child) {
     margin-bottom: 5rem;
 
@@ -309,7 +307,6 @@ const DivLinks = styled.div`
   }
 `;
 
-// width: ${props => props.oneLink ? '100%' : '50%'};
 const ALink = styled.a`
   width: 380px;
 
@@ -423,7 +420,7 @@ const ButtonLink = styled.button`
 /********************************************* Component ******************************************/
 const Project = props => {
   return (
-    <DivWrapper projectNumber={props.projectNumber.toString()}>
+    <DivWrapper>
       <DivProjectImage>
         {
           props.project.imgType === "gif" ? <ImgProject src={require(`../../assets/img/${props.project.projectPreviewImg}.gif`)} draggable="false" alt="symposium-discussion-boards" /> : <ImgProject src={require(`../../assets/img/${props.project.projectPreviewImg}.png`)} draggable="false" alt="symposium-discussion-boards" />

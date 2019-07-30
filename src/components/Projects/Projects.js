@@ -87,7 +87,7 @@ const Projects = props => {
     <DivWrapper>
       {Data.map((project, projectNumber) => {
         zIndex -= 2;
-        return <Project project={project} projectName={project.projectName.join(' ')} key={projectNumber} zIndex={zIndex} totalTechStacks={project.techStack.length} techStackToggleFullDisplay={props.techStackToggleFullDisplay} projectNumber={projectNumber} />
+        return <Project project={project} projectName={project.projectName.join(' ')} key={projectNumber} zIndex={zIndex} totalTechStacks={project.techStack.length} techStackToggleFullDisplay={props.techStackToggleFullDisplay} />
       })}
     </DivWrapper>
   );
