@@ -154,7 +154,7 @@ const H1Resumes = styled.h1`
 
   @media (max-width: 500px) {
     margin: 2rem 0;
-    font-size: 1rem;
+    font-size: 3rem;
   }
 `;
 
@@ -211,8 +211,7 @@ margin: 0 0 8.5rem;
 }
 
 @media (max-width: 500px) {
-  margin: 2rem 0;
-  font-size: 3rem;
+  margin: 1rem 0 2rem;
 }
 `;
 
