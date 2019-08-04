@@ -386,13 +386,20 @@ const ButtonContact = styled.button`
   background: ${props => props.submit ? 'linear-gradient(to top, #00c800, #008c00)' : 'linear-gradient(to top, #dddddd, #ffffff)'};
   border-color: ${props => props.submit ? '#008c00' : '#dddddd'};
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 
   &:active {
     background: ${props => props.submit ? 'linear-gradient(to top, #008c00, #00c800)' : 'linear-gradient(to top, #ffffff, #dddddd)'};
+    text-decoration: none;
   }
 
   &:hover {
     font-weight: bold;
+
+    @media (max-width: 900px) {
+      font-weight: normal;
+    }
   }
 
   @media (max-width: 3600px) {
