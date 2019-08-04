@@ -2,21 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 import { Colors } from '../../globals/CssMixins';
 
-// ${Colors.Vulcan};
+// components
+import ContactForm from '../ContactForm.js';
 
 /********************************************** Styles ********************************************/
 const DivBotBackground = styled.div`
-display: flex;
-width: 100%;
-background-color: ${Colors.Vulcan};
-position: relative;
-color: white;
+  display: flex;
+  width: 100%;
+  background-color: ${Colors.Vulcan};
+  position: relative;
+  color: white;
+  border-bottom: 4px solid #4deeea;
 
   &::before {
     content: "";
     position: absolute;
     top: 0;
-    bottom: -2px;
+    bottom: 0;
     left: 0;
     right: 0;
     background-color: ${Colors.Vulcan};
@@ -46,70 +48,126 @@ color: white;
 
   @media (max-width: 900px) {
     flex-direction: column;
+    border-bottom: none;
   }
 `;
 
+/*-------------------------------------------- contact -------------------------------------------*/
 const DivContactSection = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
-  z-index: 3;
-`;
-
-const DivContactContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
-
-const FormContact = styled.form`
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 100%;
-`;
+  width: 55%;
+  z-index: 3;
+  padding: 4rem 0;
 
-const DivInput = styled.div`
-  display: flex;
-  width: 90%;
-  margin: 15px;
+  @media (max-width: 2100px) {
+    padding: 2rem 0;
+  }
 
-  input {
+  @media (max-width: 900px) {
     width: 100%;
-    outline: none;
-    font-size: 1.6em;
-    padding: 15px;
+    border-bottom: 4px solid #4deeea;
   }
 `;
 
-const H2Name = styled.h2`
-  margin-right: 26px;
-`;
-
-const H2Email = styled.h2`
-  margin-right: 31px;
-`;
-
-const H2Subject = styled.h2`
-  margin-right: 10px;
-`;
-
-const DivTextArea = styled.div`
-  display: flex;
+const H2ContactTitle = styled.div`
+  font-size: 7rem;
   width: 90%;
-  margin: 15px;
-  flex-direction: column;
+  margin-bottom: 17rem;
+  font-weight: lighter;
 
-  textarea {
-    height: 300px;
-    border-radius: 15px;
-    outline: none;
-    padding: 25px;
-    resize: none;
-    font-size: 1.6em;
+  @media (max-width: 3600px) {
+    font-size: 6.5rem;
+    margin-bottom: 14rem;
+  }
+
+  @media (max-width: 3400px) {
+    font-size: 6rem;
+  }
+
+  @media (max-width: 3300px) {
+    font-size: 5.5rem;
+    margin-bottom: 12rem;
+  }
+
+  @media (max-width: 3200px) {
+    font-size: 5rem;
+    margin-bottom: 11rem;
+  }
+
+  @media (max-width: 3100px) {
+    font-size: 4.5rem;
+    margin-bottom: 10rem;
+  }
+
+  @media (max-width: 3000px) {
+    font-size: 4.5rem;
+    margin-bottom: 10rem;
+  }
+
+  @media (max-width: 2800px) {
+    font-size: 4.2rem;
+    margin-bottom: 9rem;
+  }
+
+  @media (max-width: 2700px) {
+    width: 81%;
+    margin-bottom: 8rem;
+  }
+
+  @media (max-width: 2500px) {
+    font-size: 3.9rem;
+    margin-bottom: 7rem;
+  }
+
+  @media (max-width: 2400px) {
+    font-size: 3.7rem;
+  }
+
+  @media (max-width: 2300px) {
+    margin-bottom: 6rem;
+  }
+
+  @media (max-width: 2200px) {
+    font-size: 3.3rem;
+  }
+
+  @media (max-width: 2000px) {
+    font-size: 3.1rem;
+    margin-bottom: 5rem;
+  }
+
+  @media (max-width: 1600px) {
+    font-size: 2.8rem;
+  }
+
+  @media (max-width: 900px) {
+    width: 83%;
+    font-size: 3.2rem;
+    margin-bottom: 6rem;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 2.8rem;
+    margin-bottom: 6rem;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 2.6rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  @media (max-width: 400px) {
+    width: 81%;
   }
 `;
 
+/*------------------------------------------ social media ----------------------------------------*/
 const DivSocialMediaSection = styled.div``;
 
 const DivSocialMediaContainer = styled.div``;
@@ -123,26 +181,8 @@ const BotSection = props => {
   return (
     <DivBotBackground>
       <DivContactSection>
-        <DivContactContainer>
-          <FormContact>
-            <DivInput>
-              <H2Name name="true">Name:&nbsp;</H2Name>
-              <input type="text" name="name" />
-            </DivInput>
-            <DivInput>
-              <H2Email email="true">Email:&nbsp;</H2Email>
-              <input type="email" name="email" />
-            </DivInput>
-            <DivInput>
-              <H2Subject subject="true">Subject:&nbsp;</H2Subject>
-              <input type="text" name="subject" autoComplete="off" />
-            </DivInput>
-            <DivTextArea>
-              <h3>Message:&nbsp;</h3>
-              <textarea type="text" name="message" />
-            </DivTextArea>
-          </FormContact>
-        </DivContactContainer>
+        <H2ContactTitle>Looking to gain a position where I can use my dev skills to build great software. Lets chat... </H2ContactTitle>
+        <ContactForm />
       </DivContactSection>
       <DivSocialMediaSection>
         <DivSocialMediaContainer>
