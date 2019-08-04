@@ -7,17 +7,18 @@ import ContactForm from '../ContactForm.js';
 
 /********************************************** Styles ********************************************/
 const DivBotBackground = styled.div`
-display: flex;
-width: 100%;
-background-color: ${Colors.Vulcan};
-position: relative;
-color: white;
+  display: flex;
+  width: 100%;
+  background-color: ${Colors.Vulcan};
+  position: relative;
+  color: white;
+  border-bottom: 4px solid #4deeea;
 
   &::before {
     content: "";
     position: absolute;
     top: 0;
-    bottom: -2px;
+    bottom: 0;
     left: 0;
     right: 0;
     background-color: ${Colors.Vulcan};
@@ -47,6 +48,7 @@ color: white;
 
   @media (max-width: 900px) {
     flex-direction: column;
+    border-bottom: none;
   }
 `;
 

@@ -6,6 +6,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 // Components
 import MainHeader from './components/header/MainHeader';
 import PortfolioPage from './pageviews/PortfolioPage.js';
+import Footer from './components/Footer.js';
 
 // Globals
 import { Colors } from './globals/CssMixins';
@@ -16,6 +17,7 @@ const { ClientUrlLinks } = require('./globals/Variables.js');
  **************************************************************************************************/
 const DivWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   min-height: 100%;
 `;
 
@@ -112,6 +114,7 @@ class App extends Component {
           pathname={this.props.location.hash}
         />
         <Route path={`${ClientUrlLinks.root}`} component={PortfolioPage} />
+        <Footer />
       </DivWrapper>
     );
   }
