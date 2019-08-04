@@ -58,6 +58,15 @@ const DivContactSection = styled.div`
   width: 55%;
   z-index: 3;
   padding: 4rem 0;
+
+  @media (max-width: 2100px) {
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+    border-bottom: 4px solid #4deeea;
+  }
 `;
 
 const H2ContactTitle = styled.div`
@@ -65,6 +74,95 @@ const H2ContactTitle = styled.div`
   width: 90%;
   margin-bottom: 17rem;
   font-weight: lighter;
+
+  @media (max-width: 3600px) {
+    font-size: 6.5rem;
+    margin-bottom: 14rem;
+  }
+
+  @media (max-width: 3400px) {
+    font-size: 6rem;
+  }
+
+  @media (max-width: 3300px) {
+    font-size: 5.5rem;
+    margin-bottom: 12rem;
+  }
+
+  @media (max-width: 3200px) {
+    font-size: 5rem;
+    margin-bottom: 11rem;
+  }
+
+  @media (max-width: 3100px) {
+    font-size: 4.5rem;
+    margin-bottom: 10rem;
+  }
+
+  @media (max-width: 3000px) {
+    font-size: 4.5rem;
+    margin-bottom: 10rem;
+  }
+
+  @media (max-width: 2800px) {
+    font-size: 4.2rem;
+    margin-bottom: 9rem;
+  }
+
+  @media (max-width: 2700px) {
+    width: 81%;
+    margin-bottom: 8rem;
+  }
+
+  @media (max-width: 2500px) {
+    font-size: 3.9rem;
+    margin-bottom: 7rem;
+  }
+
+  @media (max-width: 2400px) {
+    font-size: 3.7rem;
+  }
+
+  @media (max-width: 2300px) {
+    margin-bottom: 6rem;
+  }
+
+  @media (max-width: 2200px) {
+    font-size: 3.3rem;
+  }
+
+  @media (max-width: 2000px) {
+    font-size: 3.1rem;
+    margin-bottom: 5rem;
+  }
+
+  @media (max-width: 1600px) {
+    font-size: 2.8rem;
+  }
+
+  @media (max-width: 900px) {
+    width: 83%;
+    font-size: 3.2rem;
+    margin-bottom: 6rem;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 2.8rem;
+    margin-bottom: 6rem;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 2.6rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  @media (max-width: 400px) {
+    width: 81%;
+  }
 `;
 
 /*------------------------------------------ social media ----------------------------------------*/
