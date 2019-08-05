@@ -4,16 +4,12 @@ import styled from 'styled-components';
 // components
 import CarouselEducation from '../Carousel/CarouselEducation.js';
 
-// images
-import myFaceImgImg from '../../assets/img/myFace.png';
-
 /********************************************** Styles ********************************************/
 // Note: phone view 650 width.
 
-const DivTop = styled.div`
+const SectionTop = styled.section`
   display: flex;
   width: 100%;
-  margin-top: 14.5rem;
   background-color: #013a6b;
   position: relative;
 
@@ -49,22 +45,6 @@ const DivTop = styled.div`
     }
   }
 
-  @media (max-width: 2600px) {
-    margin-top: 11.5rem;
-  }
-
-  @media (max-width: 2100px) {
-    margin-top: 10.5rem;
-  }
-
-  @media (max-width: 1800px) {
-    margin-top: 9.5rem;
-  }
-
-  @media (max-width: 1300px) {
-    margin-top: 8.5rem;
-  }
-
   @media (max-width: 900px) {
     flex-direction: column;
   }
@@ -90,19 +70,6 @@ const DivIntro = styled.div`
   @media (max-width: 900px) {
     padding: 3rem 2.5rem;
   }
-`;
-
-const ImgFace = styled.img`
-  width: 120px;
-  height: 150px;
-  border-radius: 15px;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-  pointer-events: none;
-  margin-bottom: 4rem;
 `;
 
 const H3Intro = styled.h3`
@@ -397,7 +364,7 @@ const H1Skills = styled.h1`
   align-self: center;
   margin: 0;
   user-select: none;
-  font-size: 9rem;
+  font-size: 7rem;
   margin-bottom: 3.5rem;
   padding-left: 18rem;
 
@@ -406,7 +373,7 @@ const H1Skills = styled.h1`
   }
 
   @media (max-width: 2100px) {
-    font-size: 6rem;
+    font-size: 5rem;
   }
 
   @media (max-width: 1800px) {
@@ -502,9 +469,8 @@ const ImgSkill = styled.img`
 /********************************************* Component ******************************************/
 const TopSection = props => {
   return (
-    <DivTop>
+    <SectionTop id="home">
       <DivIntro>
-        <ImgFace src={`${myFaceImgImg}`} draggable="false" alt='' />
         <H3Intro>Greetings, thank you for taking the time to visit my portfolio. I'm a full stack developer who enjoys working in all areas.</H3Intro>
         <hr style={{width: '60%', height: '3px', backgroundColor: 'white', margin: '10px 0 35px'}} />
         <PCurrentFocus>Current focus:<span>JavaScript, React/Redux, styled&nbsp;components, nodjs, express, knex</span></PCurrentFocus>
@@ -540,7 +506,7 @@ const TopSection = props => {
           <ImgSkill bottom='true' src={require('../../assets/img/restfulapi.svg')} draggable="false" alt='restfulapi' />
         </DivSkillsSectionCategory>
       </DivSkillsSection>
-    </DivTop>
+    </SectionTop>
   );
 };
 
