@@ -84,7 +84,7 @@ const resumePdfLinks = {};
 resumePdfLinks[resumePositions[0]] = 'https://drive.google.com/file/d/1dSPD8WwO2nEYHY_yMpCvCokBcDwqDVSr/view?usp=sharing';
 resumePdfLinks[resumePositions[1]] = 'https://drive.google.com/file/d/18WVpEbOGspnGwwNXCkvC94iekShFIDhz/view?usp=sharing';
 resumePdfLinks[resumePositions[2]] = 'https://drive.google.com/file/d/1spnELVYF5o9kxpHw6YZ6rfIbXUktvi0D/view?usp=sharing';
-resumePdfLinks[resumePositions[3]] = 'https://drive.google.com/file/d/1o7txcoGtnWAOeOCQBuLh1MvmWW5yyBlt/view?usp=sharing';
+resumePdfLinks[resumePositions[3]] = 'https://drive.google.com/file/d/1ueYLYSHeW6jvfcXVtMNJKntYDxFoqTZ7/view?usp=sharing';
 resumePdfLinks[resumePositions[4]] = 'https://drive.google.com/file/d/1Qk5eoTx-lqZ330oMHiFpUnIqpN00OKGD/view?usp=sharing';
 resumePdfLinks[resumePositions[5]] = 'https://drive.google.com/file/d/1W1s_5ig_oaombliBUqZKvYe6F4xTElZ-/view?usp=sharing';
 
