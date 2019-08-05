@@ -12,7 +12,7 @@ const Data = [
   },
   {
     resumeTitle: "Software Dev",
-    resumeLink: "https://drive.google.com/file/d/1o7txcoGtnWAOeOCQBuLh1MvmWW5yyBlt/view?usp=sharing",
+    resumeLink: "https://drive.google.com/file/d/1ueYLYSHeW6jvfcXVtMNJKntYDxFoqTZ7/view?usp=sharing",
   },
   {
     resumeTitle: "Front-End Dev",
