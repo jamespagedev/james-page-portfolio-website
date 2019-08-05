@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, withRouter } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
 // Components
@@ -95,25 +94,17 @@ const GlobalStyle = createGlobalStyle`
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      navItem: ''
+    };
   }
 
   render() {
     return (
       <DivWrapper>
         <GlobalStyle />
-        <MainHeader
-          root={`${ClientUrlLinks.root}`}
-          homeSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.home}`}
-          introSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.intro}`}
-          skillsSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.skills}`}
-          workSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.work}`}
-          projectsSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.projects}`}
-          resumesSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.resumes}`}
-          contactSubLink={`${ClientUrlLinks.root}${ClientUrlLinks.contact}`}
-          pathname={this.props.location.hash}
-        />
-        <Route path={`${ClientUrlLinks.root}`} component={PortfolioPage} />
+        <MainHeader />
+        <PortfolioPage />
         <Footer />
       </DivWrapper>
     );
@@ -126,9 +117,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default withRouter(
-  connect(
+export default connect(
     mapStateToProps,
     {}
-  )(App)
-);
+  )(App);

@@ -1,12 +1,12 @@
 const ClientUrlLinks = {
   root: '/',
-  home: '#home',
-  intro: '#intro',
-  skills: '#skills',
-  work: '#work',
-  projects: '#projects',
-  resumes: '#resumes',
-  contact: '#contact'
+  home: 'home',
+  intro: 'intro',
+  skills: 'skills',
+  work: 'work',
+  projects: 'projects',
+  resumes: 'resumes',
+  contact: 'contact'
 };
 
 const MainPageTitles = {

@@ -2,13 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import { Colors } from '../../globals/CssMixins';
-
-// Globals
-const { ClientUrlLinks } = require('../../globals/Variables.js');
-
-
 
 /***************************************************************************************************
  ********************************************** Styles *********************************************
@@ -18,28 +13,7 @@ const DivWrapper = styled.div`
   margin: 0;
   background: ${Colors.Vulcan};
   width: 60%;
-  height: 14rem;
   justify-content: center;
-
-  @media (max-width: 1200px) {
-    width: 70%;
-  }
-
-  @media (max-width: 2600px) {
-    height: 11rem;
-  }
-
-  @media (max-width: 2100px) {
-    height: 10rem;
-  }
-
-  @media (max-width: 1800px) {
-    height: 9rem;
-  }
-
-  @media (max-width: 1300px) {
-    height: 8rem;
-  }
 `;
 
 const Nav = styled.nav`
@@ -59,8 +33,13 @@ const LinkHome = styled(Link)`
   font-family: sans-serif;
   letter-spacing: 0.2em;
   width: 100%;
-  color: ${props => (props.selectedmainheaderpage === 'true' ? `#ababab` : `white`)};
+  color: white;
+  &.active {
+    color: #ababab;
+  }
   text-decoration: none;
+  user-select: none;
+  cursor: pointer;
 
   @media (max-width: 2600px) {
     font-size: 4.2rem;
@@ -95,8 +74,13 @@ const LinkPortfolio = styled(Link)`
   font-family: sans-serif;
   letter-spacing: 0.2em;
   width: 100%;
-  color: ${props => (props.selectedmainheaderpage === 'true' ? `#ababab` : `white`)};
+  color: white;
+  &.active {
+    color: #ababab;
+  }
   text-decoration: none;
+  user-select: none;
+  cursor: pointer;
 
   @media (max-width: 2600px) {
     font-size: 4.2rem;
@@ -121,7 +105,7 @@ const LinkPortfolio = styled(Link)`
   }
 `;
 
-const LinkCareer = styled(Link)`
+const LinkContact = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,8 +115,14 @@ const LinkCareer = styled(Link)`
   font-family: sans-serif;
   letter-spacing: 0.2em;
   width: 100%;
-  color: ${props => (props.selectedmainheaderpage === 'true' ? `#ababab` : `white`)};
+  color: white;
+  color: white;
+  &.active {
+    color: #ababab;
+  }
   text-decoration: none;
+  user-select: none;
+  cursor: pointer;
 
   @media (max-width: 2600px) {
     font-size: 4.2rem;
@@ -161,27 +151,40 @@ const LinkCareer = styled(Link)`
  ********************************************* Component *******************************************
  **************************************************************************************************/
 const MainHeaderNav = props => {
+  console.log('props =', props.pathname)
   return (
     <DivWrapper>
       <Nav>
         <LinkHome
-          selectedmainheaderpage={(props.pathname === ClientUrlLinks.home).toString()}
-          to={`${props.homeSubLink}`}
+          activeClass="active"
+          to={`home`}
+          spy={true}
+          smooth={true}
+          offset={-80}
+          duration={500}
         >
           HOME
         </LinkHome>
         <LinkPortfolio
-          selectedmainheaderpage={(props.pathname === ClientUrlLinks.work).toString()}
-          to={`${props.workSubLink}`}
+          activeClass="active"
+          to={`work`}
+          spy={true}
+          smooth={true}
+          offset={-80}
+          duration={500}
         >
           WORK
         </LinkPortfolio>
-        <LinkCareer
-          selectedmainheaderpage={(props.pathname === ClientUrlLinks.contact).toString()}
-          to={`${props.contactSubLink}`}
+        <LinkContact
+          activeClass="active"
+          to={`contact`}
+          spy={true}
+          smooth={true}
+          offset={-80}
+          duration={500}
         >
           CONTACT
-        </LinkCareer>
+        </LinkContact>
       </Nav>
     </DivWrapper>
   );

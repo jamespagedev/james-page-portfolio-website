@@ -6,7 +6,7 @@ import Projects from '../Projects/Projects.js';
 import Resumes from '../Resumes/Resumes.js';
 
 /********************************************** Styles ********************************************/
-const DivMidBackground = styled.div`
+const SectionMid = styled.section`
   display: flex;
   width: 100%;
   background-color: #004e95;
@@ -218,7 +218,7 @@ margin: 0 0 8.5rem;
 /********************************************* Component ******************************************/
 const MidSection = props => {
   return (
-    <DivMidBackground>
+    <SectionMid id="work">
       <DivProjectSection>
         <H1Projects>Project(s)</H1Projects>
         <Projects />
@@ -228,7 +228,7 @@ const MidSection = props => {
         <H4ClickToView>(click to view)</H4ClickToView>
         <Resumes />
       </DivResumeSection>
-    </DivMidBackground>
+    </SectionMid>
   );
 };
 

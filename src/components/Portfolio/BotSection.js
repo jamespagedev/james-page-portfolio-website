@@ -6,7 +6,7 @@ import { Colors } from '../../globals/CssMixins';
 import ContactForm from '../ContactForm.js';
 
 /********************************************** Styles ********************************************/
-const DivBotBackground = styled.div`
+const SectionBot = styled.section`
   display: flex;
   width: 100%;
   background-color: ${Colors.Vulcan};
@@ -179,7 +179,7 @@ const DivGithub = styled.div``;
 /********************************************* Component ******************************************/
 const BotSection = props => {
   return (
-    <DivBotBackground>
+    <SectionBot id="contact">
       <DivContactSection>
         <H2ContactTitle>Looking to gain a position where I can use my dev skills to build great software. Lets chat... </H2ContactTitle>
         <ContactForm />
@@ -190,7 +190,7 @@ const BotSection = props => {
           <DivGithub></DivGithub>
         </DivSocialMediaContainer>
       </DivSocialMediaSection>
-    </DivBotBackground>
+    </SectionBot>
   );
 };
 
