@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import styled, { createGlobalStyle } from 'styled-components';
 
 // Components
@@ -110,13 +109,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    mainPageTitles: state.mainPageTitles
-  };
-};
-
-export default connect(
-    mapStateToProps,
-    {}
-  )(App);
+export default App;

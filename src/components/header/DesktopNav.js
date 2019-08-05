@@ -102,13 +102,4 @@ const DesktopNav = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    ...state
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  { }
-)(DesktopNav);
+export default DesktopNav;
