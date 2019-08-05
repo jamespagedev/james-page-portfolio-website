@@ -527,19 +527,19 @@ const ContactForm = props => {
     <DivContactContainer>
       <FormContact>
         <DivInput>
-          <LabelContact for="name" name="true">Name:&nbsp;</LabelContact>
+          <LabelContact htmlFor="name" name="true">Name:&nbsp;</LabelContact>
           <InputContact type="text" name="name" id="name" required />
         </DivInput>
         <DivInput>
-          <LabelContact for="email" email="true">Email:&nbsp;</LabelContact>
+          <LabelContact htmlFor="email" email="true">Email:&nbsp;</LabelContact>
           <InputContact type="email" name="email" id="email" required />
         </DivInput>
         <DivInput>
-          <LabelContact for="subject" subject="true">Subject:&nbsp;</LabelContact>
+          <LabelContact htmlFor="subject" subject="true">Subject:&nbsp;</LabelContact>
           <InputContact type="text" name="subject" id="subject" autoComplete="off" required />
         </DivInput>
         <DivTextArea>
-          <LabelContact for="message">Message:</LabelContact>
+          <LabelContact htmlFor="message">Message:</LabelContact>
           <textarea name="message" id="message" rows="6" required />
         </DivTextArea>
         <DivButtons>

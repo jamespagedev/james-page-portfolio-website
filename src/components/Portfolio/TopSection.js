@@ -364,7 +364,7 @@ const H1Skills = styled.h1`
   align-self: center;
   margin: 0;
   user-select: none;
-  font-size: 9rem;
+  font-size: 7rem;
   margin-bottom: 3.5rem;
   padding-left: 18rem;
 

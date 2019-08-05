@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import MainHeaderNav from './MainHeaderNav';
 import { Colors } from '../../globals/CssMixins';
+
+// components
+import DesktopNav from './DesktopNav.js';
+import TabletNav from './TabletNav.js'
 
 // images
 import myFaceImgImg from '../../assets/img/myFace.png';
@@ -24,10 +27,72 @@ const DivWrapper = styled.div`
 
 const DivImgName= styled.div`
   display: flex;
-  height: 100%;
+  width: 24%;
   justify-content: center;
   align-items: center;
-  margin-left: 5rem;
+
+  @media (max-width: 2500px) {
+    width: 25%;
+  }
+
+  @media (max-width: 2200px) {
+    width: 26%;
+  }
+
+  @media (max-width: 2100px) {
+    width: 28%;
+  }
+
+  @media (max-width: 2000px) {
+    width: 29%;
+  }
+
+  @media (max-width: 1900px) {
+    width: 30%;
+  }
+
+  @media (max-width: 1800px) {
+    width: 33%;
+  }
+
+  @media (max-width: 1700px) {
+    width: 35%;
+  }
+
+  @media (max-width: 1600px) {
+    width: 36%;
+  }
+
+  @media (max-width: 1500px) {
+    width: 37%;
+  }
+
+  @media (max-width: 1400px) {
+    width: 38%;
+  }
+
+  @media (max-width: 1300px) {
+    width: 39.5%;
+  }
+
+  @media (max-width: 1200px) {
+    width: 35rem;
+    margin-left: 3.5rem;
+  }
+
+  @media (max-width: 900px) {
+    width: 35rem;
+    margin-left: 1.5rem;
+  }
+
+  @media (max-width: 500px) {
+    width: 28rem;
+  }
+
+  @media (max-width: 380px) {
+    width: 23rem;
+    margin-left: 1.4rem;
+  }
 `;
 
 const ImgFace = styled.img`
@@ -40,6 +105,11 @@ const ImgFace = styled.img`
   -o-user-select: none;
   user-select: none;
   pointer-events: none;
+
+  @media (max-width: 380px) {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
 `;
 
 const H1Logo = styled.h1`
@@ -49,6 +119,20 @@ const H1Logo = styled.h1`
   filter: contrast(1.75);
   font-weight: bold;
   font-size: 5rem;
+
+  @media (max-width: 1200px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 3rem;
+    padding: 0 0 0.5rem 1rem;
+  }
+
+  @media (max-width: 380px) {
+    font-size: 2.6rem;
+    padding: 0 0 0.5rem 0.5rem;
+  }
 `;
 
 /***************************************************************************************************
@@ -61,7 +145,8 @@ const MainHeader = props => {
         <ImgFace src={`${myFaceImgImg}`} draggable="false" alt='' />
         <H1Logo>James&nbsp;C.&nbsp;Page</H1Logo>
       </DivImgName>
-      <MainHeaderNav {...props} />
+      <DesktopNav {...props} />
+      <TabletNav {...props} />
     </DivWrapper>
   );
 };

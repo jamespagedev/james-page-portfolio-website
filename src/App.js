@@ -9,7 +9,6 @@ import Footer from './components/Footer.js';
 
 // Globals
 import { Colors } from './globals/CssMixins';
-const { ClientUrlLinks } = require('./globals/Variables.js');
 
 /***************************************************************************************************
  ********************************************** Styles **********************************************

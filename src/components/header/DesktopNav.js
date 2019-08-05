@@ -14,6 +14,10 @@ const DivWrapper = styled.div`
   background: ${Colors.Vulcan};
   width: 60%;
   justify-content: center;
+
+  @media(max-width: 1200px) {
+    display: none;
+  }
 `;
 
 const Nav = styled.nav`
@@ -23,7 +27,7 @@ const Nav = styled.nav`
   justify-content: space-evenly;
 `;
 
-const LinkHome = styled(Link)`
+const LinkNavItem = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,122 +44,30 @@ const LinkHome = styled(Link)`
   text-decoration: none;
   user-select: none;
   cursor: pointer;
-
-  @media (max-width: 2600px) {
-    font-size: 4.2rem;
-  }
-
-  @media (max-width: 2100px) {
-    font-size: 3.4rem;
-  }
-
-  @media (max-width: 1800px) {
-    font-size: 2.4rem;
-  }
-
-  @media (max-width: 1300px) {
-    font-size: 1.6rem;
-  }
 
   &:hover {
     transition: all 0.4s ease-in;
     color: #78d0fb;
     text-decoration: underline;
   }
-`;
-
-const LinkPortfolio = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5rem;
-  font-weight: 300;
-  font-style: normal;
-  font-family: sans-serif;
-  letter-spacing: 0.2em;
-  width: 100%;
-  color: white;
-  &.active {
-    color: #ababab;
-  }
-  text-decoration: none;
-  user-select: none;
-  cursor: pointer;
-
-  @media (max-width: 2600px) {
-    font-size: 4.2rem;
-  }
 
   @media (max-width: 2100px) {
-    font-size: 3.4rem;
+    font-size: 4rem;
   }
 
   @media (max-width: 1800px) {
-    font-size: 2.4rem;
-  }
-
-  @media (max-width: 1300px) {
-    font-size: 1.6rem;
-  }
-
-  &:hover {
-    transition: all 0.4s ease-in;
-    color: #78d0fb;
-    text-decoration: underline;
-  }
-`;
-
-const LinkContact = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5rem;
-  font-weight: 300;
-  font-style: normal;
-  font-family: sans-serif;
-  letter-spacing: 0.2em;
-  width: 100%;
-  color: white;
-  color: white;
-  &.active {
-    color: #ababab;
-  }
-  text-decoration: none;
-  user-select: none;
-  cursor: pointer;
-
-  @media (max-width: 2600px) {
-    font-size: 4.2rem;
-  }
-
-  @media (max-width: 2100px) {
     font-size: 3.2rem;
-  }
-
-  @media (max-width: 1800px) {
-    font-size: 2.4rem;
-  }
-
-  @media (max-width: 1300px) {
-    font-size: 1.6rem;
-  }
-
-  &:hover {
-    transition: all 0.4s ease-in;
-    color: #78d0fb;
-    text-decoration: underline;
   }
 `;
 
 /***************************************************************************************************
  ********************************************* Component *******************************************
  **************************************************************************************************/
-const MainHeaderNav = props => {
-  console.log('props =', props.pathname)
+const DesktopNav = props => {
   return (
     <DivWrapper>
       <Nav>
-        <LinkHome
+        <LinkNavItem
           activeClass="active"
           to={`home`}
           spy={true}
@@ -164,8 +76,8 @@ const MainHeaderNav = props => {
           duration={500}
         >
           HOME
-        </LinkHome>
-        <LinkPortfolio
+        </LinkNavItem>
+        <LinkNavItem
           activeClass="active"
           to={`work`}
           spy={true}
@@ -174,8 +86,8 @@ const MainHeaderNav = props => {
           duration={500}
         >
           WORK
-        </LinkPortfolio>
-        <LinkContact
+        </LinkNavItem>
+        <LinkNavItem
           activeClass="active"
           to={`contact`}
           spy={true}
@@ -184,7 +96,7 @@ const MainHeaderNav = props => {
           duration={500}
         >
           CONTACT
-        </LinkContact>
+        </LinkNavItem>
       </Nav>
     </DivWrapper>
   );
@@ -199,4 +111,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { }
-)(MainHeaderNav);
+)(DesktopNav);
