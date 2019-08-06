@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-scroll';
 
 // globals
@@ -36,6 +36,7 @@ const LinkNavItem = styled(Link)`
   text-align: center;
   font-size: 4rem;
   font-weight: bold;
+  user-select: none;
   cursor: pointer;
 
   &.active {
