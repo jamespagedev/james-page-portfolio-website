@@ -29,7 +29,7 @@ const Modals = props => {
     return (
       <DivWrapper onClick={ev => props.setHamburgerMenu(ev, false)}>
         <TabletHamburgerDropdown hamburgerOpen={props.hamburgerOpen} setHamburgerMenu={props.setHamburgerMenu}/>
-        <PhoneHamburgerDropdown />
+        <PhoneHamburgerDropdown hamburgerOpen={props.hamburgerOpen} setHamburgerMenu={props.setHamburgerMenu}/>
       </DivWrapper>
     );
   }

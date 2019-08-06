@@ -16,7 +16,6 @@ const DivWrapper = styled.div`
     display: flex;
     position: fixed;
     top: 8rem;
-    transition: all 0.3s;
   }
 
   @media(max-width: 900px) {

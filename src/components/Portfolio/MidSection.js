@@ -219,11 +219,11 @@ margin: 0 0 8.5rem;
 const MidSection = props => {
   return (
     <SectionMid id="work">
-      <DivProjectSection>
+      <DivProjectSection id="projects">
         <H1Projects>Project(s)</H1Projects>
         <Projects />
       </DivProjectSection>
-      <DivResumeSection>
+      <DivResumeSection id="resumes">
         <H1Resumes>Resume(s)</H1Resumes>
         <H4ClickToView>(click to view)</H4ClickToView>
         <Resumes />
