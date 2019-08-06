@@ -4,7 +4,7 @@ import { Colors } from '../../globals/CssMixins';
 
 // components
 import DesktopNav from './DesktopNav.js';
-import TabletNav from './TabletNav.js'
+import Hamburger from './Hamburger.js'
 
 // images
 import myFaceImgImg from '../../assets/img/myFace.png';
@@ -146,7 +146,7 @@ const MainHeader = props => {
         <H1Logo>James&nbsp;C.&nbsp;Page</H1Logo>
       </DivImgName>
       <DesktopNav {...props} />
-      <TabletNav {...props} />
+      <Hamburger {...props} />
     </DivWrapper>
   );
 };

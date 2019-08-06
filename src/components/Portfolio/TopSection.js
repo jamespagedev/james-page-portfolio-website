@@ -470,7 +470,7 @@ const ImgSkill = styled.img`
 const TopSection = props => {
   return (
     <SectionTop id="home">
-      <DivIntro>
+      <DivIntro id="home-phone">
         <H3Intro>Greetings, thank you for taking the time to visit my portfolio. I'm a full stack developer who enjoys working in all areas.</H3Intro>
         <hr style={{width: '60%', height: '3px', backgroundColor: 'white', margin: '10px 0 35px'}} />
         <PCurrentFocus>Current focus:<span>JavaScript, React/Redux, styled&nbsp;components, nodjs, express, knex</span></PCurrentFocus>
@@ -479,7 +479,7 @@ const TopSection = props => {
         <PEducation>Education:</PEducation>
         <CarouselEducation />
       </DivIntro>
-      <DivSkillsSection>
+      <DivSkillsSection id="skills">
         <H1Skills>Skills</H1Skills>
         <DivSkillsSectionCategory size='small'>
           <ImgSkill top='true' src={require('../../assets/img/javascript.svg')} draggable="false" alt='javascript' />
