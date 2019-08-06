@@ -56,19 +56,19 @@ const DivIntro = styled.div`
   flex-direction: column;
   position: relative;
   width: 50%;
-  padding: 100px 0 0 35px;
+  padding: 7rem 0 0 3.5rem;
   align-items: center;
   z-index: 3;
 
   @media (max-width: 900px) {
     width: 100%;
-    padding: 5rem 2.5rem;
+    padding: 3rem 2.5rem;
     justify-content: flex-start;
     border-bottom: 4px solid #4deeea;
   }
 
   @media (max-width: 900px) {
-    padding: 3rem 2.5rem;
+    padding: 1rem 2.5rem;
   }
 `;
 
@@ -303,10 +303,13 @@ const PEventually = styled.p`
 `;
 
 const PEducation = styled.p`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   margin-bottom: 3rem;
   color: white;
-  font-size: 4.6rem;
+  font-size: 6rem;
+  line-height: 1.7;
   font-weight: bold;
 
   @media (max-width: 2600px) {
@@ -331,6 +334,15 @@ const PEducation = styled.p`
 
   @media (max-width: 900px) {
     padding: 0;
+  }
+
+  span {
+    font-weight: normal;
+    padding-left: 6rem;
+
+    @media (max-width: 900px) {
+      padding-left: 3rem;
+    }
   }
 `;
 
@@ -472,11 +484,11 @@ const TopSection = props => {
     <SectionTop id="home">
       <DivIntro id="home-phone">
         <H3Intro>Greetings, thank you for taking the time to visit my portfolio. I'm a full stack developer who enjoys working in all areas.</H3Intro>
-        <hr style={{width: '60%', height: '3px', backgroundColor: 'white', margin: '10px 0 35px'}} />
+        <hr style={{width: '76%', height: '3px', backgroundColor: 'white', margin: '30px 0px 45px'}} />
         <PCurrentFocus>Current focus:<span>JavaScript, React/Redux, styled&nbsp;components, nodjs, express, knex</span></PCurrentFocus>
         <PExploring>Exploring:<span>django, aws, docker</span></PExploring>
         <PEventually>Eventually:<span>graphql, C#, ruby on rails, golang, gatsbyjs, sass, socket.io, flutter, hooks(react), feathers.js, goat, oauth2, jenkins, joi, dia, figma, pusher</span></PEventually>
-        <PEducation>Education:</PEducation>
+        <PEducation>Education:<span>Valedictorian, 4.0GPA, Perfect&nbsp;Attendance</span></PEducation>
         <CarouselEducation />
       </DivIntro>
       <DivSkillsSection id="skills">
