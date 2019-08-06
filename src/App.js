@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 // Components
 import MainHeader from './components/header/MainHeader';
+import Modals from './components/Modals/Modals.js';
 import PortfolioPage from './pageviews/PortfolioPage.js';
 import Footer from './components/Footer.js';
 
@@ -93,15 +94,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      navItem: ''
+      hamburgerOpen: false
     };
+  }
+
+  setHamburgerMenu = (status) => {
+    this.setState({hamburgerOpen: status});
   }
 
   render() {
     return (
       <DivWrapper>
         <GlobalStyle />
-        <MainHeader />
+        <MainHeader hamburgerOpen={this.state.hamburgerOpen} setHamburgerMenu={this.setHamburgerMenu}/>
+        <Modals hamburgerOpen={this.state.hamburgerOpen} setHamburgerMenu={this.setHamburgerMenu}/>
         <PortfolioPage />
         <Footer />
       </DivWrapper>

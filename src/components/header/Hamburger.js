@@ -33,7 +33,6 @@ const DivBarTop = styled.div`
   @media(max-width: 380px) {
     width: 3.5rem;
     margin: 0.6rem 0;
-    -webkit-transform: ${ props => props.hamburgerOpen === 'true' && 'rotate(-45deg) translate(-0.8rem, 0.7rem)'};
     transform: ${ props => props.hamburgerOpen === 'true' && 'rotate(-45deg) translate(-0.8rem, 0.7rem)'};
   }
 `;
@@ -60,7 +59,6 @@ const DivBarBot = styled.div`
   margin: 1rem 0;
   transition: 0.4s;
 
-  -webkit-transform: ${ props => props.hamburgerOpen === 'true' && 'rotate(46deg) translate(-1.1rem,-1.1rem)'};
   transform: ${ props => props.hamburgerOpen === 'true' && 'rotate(46deg) translate(-1.1rem,-1.1rem)'};
 
   @media(max-width: 380px) {
@@ -72,14 +70,14 @@ const DivBarBot = styled.div`
 `;
 
 /********************************************* Component ******************************************/
-const TabletNav = props => {
+const Hamburger = props => {
   return (
-    <DivHamburger>
-      <DivBarTop hamburgerOpen="false" />
-      <DivBarMid hamburgerOpen="false" />
-      <DivBarBot hamburgerOpen="false" />
+    <DivHamburger onClick={ev => props.setHamburgerMenu(ev, !props.hamburgerOpen)}>
+      <DivBarTop hamburgerOpen={props.hamburgerOpen.toString()} />
+      <DivBarMid hamburgerOpen={props.hamburgerOpen.toString()} />
+      <DivBarBot hamburgerOpen={props.hamburgerOpen.toString()} />
     </DivHamburger>
   );
 };
 
-export default TabletNav;
+export default Hamburger;
