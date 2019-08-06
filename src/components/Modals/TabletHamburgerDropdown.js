@@ -7,15 +7,15 @@ import { Colors } from '../../globals/CssMixins.js';
 
 /********************************************** Styles ********************************************/
 const DivWrapper = styled.div`
-  display: none;
+  display: flex;
   width: 100%;
   background: ${Colors.Woodsmoke2};
   z-index: 4001;
 
   @media(max-width: 1200px) {
-    display: flex;
     position: fixed;
-    top: 8rem;
+    top: ${props => props.hamburgeropen === 'true' ? '8rem' : '-24rem'};
+    transition: all 0.3s ease-in-out;
   }
 
   @media(max-width: 900px) {
@@ -28,6 +28,8 @@ const Nav = styled.nav`
   flex-direction: column;
   width: 100%;
   margin: 4rem 0;
+  opacity: ${props => props.hamburgeropen === 'true' ? '1' : '0'};
+  transition: display 0.5s ease-in-out;
 `;
 
 const LinkNavItem = styled(Link)`
@@ -37,6 +39,10 @@ const LinkNavItem = styled(Link)`
   font-weight: bold;
   user-select: none;
   cursor: pointer;
+  pointer-events: ${props => props.hamburgeropen === 'true' ? 'auto' : 'none'};
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 
   &.active {
     color: #78d0fb;
@@ -51,9 +57,10 @@ const LinkNavItem = styled(Link)`
 /********************************************* Component ******************************************/
 const TabletHamburgerDropdown = props => {
   return (
-    <DivWrapper onClick={ev => ev.stopPropagation()} hamburgerOpen={props.hamburgerOpen}>
-      <Nav>
+    <DivWrapper onClick={ev => ev.stopPropagation()} hamburgeropen={props.hamburgeropen.toString()}>
+      <Nav hamburgeropen={props.hamburgeropen.toString()}>
         <LinkNavItem
+          hamburgeropen={props.hamburgeropen.toString()}
           onClick={ev => props.setHamburgerMenu(ev, false)}
           activeClass="active"
           to={`home`}
@@ -65,6 +72,7 @@ const TabletHamburgerDropdown = props => {
           HOME
         </LinkNavItem>
         <LinkNavItem
+          hamburgeropen={props.hamburgeropen.toString()}
           onClick={ev => props.setHamburgerMenu(ev, false)}
           activeClass="active"
           to={`work`}
@@ -76,6 +84,7 @@ const TabletHamburgerDropdown = props => {
           WORK
         </LinkNavItem>
         <LinkNavItem
+          hamburgeropen={props.hamburgeropen.toString()}
           onClick={ev => props.setHamburgerMenu(ev, false)}
           activeClass="active"
           to={`contact`}

@@ -38,16 +38,18 @@ const LinkNavItem = styled(Link)`
   width: 100%;
   color: white;
   &.active {
-    color: #ababab;
+    color: #78d0fb;
+    opacity: 0.7;
+    text-decoration: underline;
   }
   text-decoration: none;
   user-select: none;
   cursor: pointer;
 
   &:hover {
-    transition: all 0.4s ease-in;
+    transition: all 0.3s ease-in;
+    opacity: 1;
     color: #78d0fb;
-    text-decoration: underline;
   }
 
   @media (max-width: 2100px) {

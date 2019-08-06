@@ -115,8 +115,7 @@ const ImgFace = styled.img`
 const H1Logo = styled.h1`
   padding: 0 0 1rem 2rem;
   user-select: none;
-  color: #5c8ad2;
-  filter: contrast(1.75);
+  color: #78d0fb;
   font-weight: bold;
   font-size: 5rem;
 

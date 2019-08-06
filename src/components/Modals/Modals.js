@@ -14,27 +14,19 @@ const DivWrapper = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  max-height: ${props => props.hamburgeropen === 'true' ? '100%' : '0'};
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 4000;
-`;
-
-const DivVoid = styled.div`
-  display: none;
+  transition: max-height 0.3s ease-in-out;
 `;
 
 /********************************************* Component ******************************************/
 const Modals = props => {
-  if (props.hamburgerOpen){
-    return (
-      <DivWrapper onClick={ev => props.setHamburgerMenu(ev, false)}>
-        <TabletHamburgerDropdown hamburgerOpen={props.hamburgerOpen} setHamburgerMenu={props.setHamburgerMenu}/>
-        <PhoneHamburgerDropdown hamburgerOpen={props.hamburgerOpen} setHamburgerMenu={props.setHamburgerMenu}/>
-      </DivWrapper>
-    );
-  }
   return (
-    <DivVoid />
+    <DivWrapper hamburgeropen={props.hamburgerOpen.toString()} onClick={ev => props.setHamburgerMenu(ev, false)}>
+      <TabletHamburgerDropdown hamburgeropen={props.hamburgerOpen} setHamburgerMenu={props.setHamburgerMenu}/>
+      <PhoneHamburgerDropdown hamburgeropen={props.hamburgerOpen} setHamburgerMenu={props.setHamburgerMenu}/>
+    </DivWrapper>
   );
 };
 
