@@ -17,7 +17,7 @@ const DivWrapper = styled.div`
 /********************************************* Component ******************************************/
 const PhoneHamburgerDropdown = props => {
   return (
-    <DivWrapper>
+    <DivWrapper onClick={ev => ev.stopPropagation()}>
       <h1>This is the PhoneHamburgerDropdown component</h1>
     </DivWrapper>
   );

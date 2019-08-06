@@ -27,8 +27,8 @@ const DivVoid = styled.div`
 const Modals = props => {
   if (props.hamburgerOpen){
     return (
-      <DivWrapper onClick={ev => {ev.stopPropagation(); props.setHamburgerMenu(false)}}>
-        <TabletHamburgerDropdown />
+      <DivWrapper onClick={ev => props.setHamburgerMenu(ev, false)}>
+        <TabletHamburgerDropdown hamburgerOpen={props.hamburgerOpen} setHamburgerMenu={props.setHamburgerMenu}/>
         <PhoneHamburgerDropdown />
       </DivWrapper>
     );

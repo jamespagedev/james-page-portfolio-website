@@ -98,7 +98,8 @@ class App extends Component {
     };
   }
 
-  setHamburgerMenu = (status) => {
+  setHamburgerMenu = (ev, status) => {
+    ev.preventDefault();
     this.setState({hamburgerOpen: status});
   }
 
