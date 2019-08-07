@@ -168,13 +168,54 @@ const H2ContactTitle = styled.div`
 `;
 
 /*------------------------------------------ social media ----------------------------------------*/
-const DivSocialMediaSection = styled.div``;
+const DivSocialMediaSection = styled.div`
+  display: flex;
+  width: 45%;
+  justify-content: center;
+  align-items: center;
 
-const DivSocialMediaContainer = styled.div``;
+  @media (max-width:900px) {
+    display: none;
+  }
+`;
 
-const DivLinkedin = styled.div``;
+const DivSocialMediaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55%;
+  margin-left: 5rem;
+`;
 
-const DivGithub = styled.div``;
+const DivLinkedin = styled.div`
+  display: block;
+  width: 100%;
+  border-top: 4px solid #78d0fb;
+  border-bottom: 4px solid #78d0fb;
+`;
+
+const ALinkedIn = styled.a`
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+const ImgLinkedIn = styled.img`
+  width: 50%;
+  align-self: center;
+  padding: 4rem 0;
+`;
+
+const DivGithub = styled.div`
+  display: block;
+  width: 100%;
+  border-bottom: 4px solid #78d0fb;
+`;
 
 /********************************************* Component ******************************************/
 const BotSection = props => {
@@ -186,8 +227,16 @@ const BotSection = props => {
       </DivContactSection>
       <DivSocialMediaSection>
         <DivSocialMediaContainer>
-          <DivLinkedin></DivLinkedin>
-          <DivGithub></DivGithub>
+          <DivLinkedin>
+            <ALinkedIn href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
+              <ImgLinkedIn src={require('../../assets/img/linkedindesktop.svg')} alt='linkedin-desktop' />
+            </ALinkedIn>
+          </DivLinkedin>
+          <DivGithub>
+            <ALinkedIn href='https://github.com/jamespagedev' target='_blank'>
+              <ImgLinkedIn src={require('../../assets/img/githubdesktop.svg')} alt='linkedin-desktop' />
+            </ALinkedIn>
+          </DivGithub>
         </DivSocialMediaContainer>
       </DivSocialMediaSection>
     </SectionBot>
