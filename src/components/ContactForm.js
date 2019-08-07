@@ -382,15 +382,18 @@ const ButtonContact = styled.button`
   font-size: 6rem;
   padding: 2rem 0;
   border-radius: 2rem;
-  background-color: ${props => props.submit ? 'Green' : '#dddddd'};
-  background: ${props => props.submit ? 'linear-gradient(to top, #00c800, #008c00)' : 'linear-gradient(to top, #dddddd, #ffffff)'};
-  border-color: ${props => props.submit ? '#008c00' : '#dddddd'};
+  background-color: #146a94;
+    background: linear-gradient(to top,#78d0fb,#146a94);
+    border-color: #146a94;
+  background-color: ${props => props.submit ? '146a94' : '#dddddd'};
+  background: ${props => props.submit ? 'linear-gradient(to top, #78d0fb, #146a94)' : 'linear-gradient(to top, #dddddd, #ffffff)'};
+  border-color: ${props => props.submit ? '#78d0fb' : '#dddddd'};
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
 
   &:active {
-    background: ${props => props.submit ? 'linear-gradient(to top, #008c00, #00c800)' : 'linear-gradient(to top, #ffffff, #dddddd)'};
+    background: ${props => props.submit ? 'linear-gradient(to top, #146a94, #78d0fb)' : 'linear-gradient(to top, #ffffff, #dddddd)'};
     text-decoration: none;
   }
 
