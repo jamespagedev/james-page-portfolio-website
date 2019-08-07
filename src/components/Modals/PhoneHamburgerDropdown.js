@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { Link } from 'react-scroll';
 
 // globals
-import { Colors } from '../../globals/CssMixins.js';
+import { rWidths, Colors } from '../../globals/CssMixins.js';
 
-/********************************************** Styles ********************************************/
+//============================================ styles =============================================
 const DivWrapper = styled.div`
   display: none;
   width: 100%;
@@ -13,7 +13,7 @@ const DivWrapper = styled.div`
   z-index: 4001;
   height: 35rem;
 
-  @media(max-width: 900px) {
+  @media(max-width: ${rWidths.phone}) {
     display: flex;
     position: fixed;
     top: ${props => props.hamburgeropen === 'true' ? '8rem' : '-40rem'};
@@ -30,16 +30,16 @@ const Nav = styled.nav`
 `;
 
 const LinkNavItem = styled(Link)`
+  padding: 2rem;
+  border-bottom: 0.2rem solid ${Colors.TurquoiseBlue};
   color: white;
   font-size: 2.8rem;
   user-select: none;
   cursor: pointer;
-  padding: 2rem;
-  border-bottom: 2px solid #4deeea;
   pointer-events: ${props => props.hamburgeropen === 'true' ? 'auto' : 'none'};
 
   &.active {
-    color: #78d0fb;
+    color: ${Colors.Malibu};
   }
 
   &:hover {
@@ -48,7 +48,7 @@ const LinkNavItem = styled(Link)`
   }
 `;
 
-/********************************************* Component ******************************************/
+//=========================================== component ===========================================
 const PhoneHamburgerDropdown = props => {
   return (
     <DivWrapper onClick={ev => ev.stopPropagation()} hamburgeropen={props.hamburgeropen.toString()}>

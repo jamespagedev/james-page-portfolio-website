@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-// Components
+// globals
+import { Colors } from './globals/CssMixins';
+
+// components
 import MainHeader from './components/header/MainHeader';
 import Modals from './components/Modals/Modals.js';
 import PortfolioPage from './pageviews/PortfolioPage.js';
 import Footer from './components/Footer.js';
 
-// Globals
-import { Colors } from './globals/CssMixins';
-
-/***************************************************************************************************
- ********************************************** Styles **********************************************
- **************************************************************************************************/
+//============================================ styles =============================================
 const DivWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -87,9 +85,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-/***************************************************************************************************
- ********************************************* Component *******************************************
- **************************************************************************************************/
+//=========================================== component ===========================================
 class App extends Component {
   constructor(props) {
     super(props);

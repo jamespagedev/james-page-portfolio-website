@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// globals
+import { rWidths } from '../../globals/CssMixins.js';
+
 // components
 import Resume from './Resume.js';
 
@@ -32,7 +35,7 @@ const Data = [
   }
 ]
 
-/********************************************** styles ********************************************/
+//============================================ styles =============================================
 const DivWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -41,13 +44,13 @@ const DivWrapper = styled.div`
   width: 87%;
   margin-bottom: 5rem;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     width: 100%;
   }
 `;
 
-/********************************************* component ******************************************/
-const Resumes = props => {
+//=========================================== component ===========================================
+const Resumes = () => {
   return (
     <DivWrapper>
       {Data.map((resume, resumeNumber) => {

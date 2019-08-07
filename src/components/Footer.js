@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/********************************************** Styles ********************************************/
+// globals
+import { rWidths, Colors } from '../globals/CssMixins.js';
+
+//============================================ styles =============================================
 const DivFooter = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 10rem;
-  background-color: #111111;
+  background-color: ${Colors.darkerCodGray};
 
   @media(max-width: 3600px) {
     padding: 9.750rem;
@@ -105,7 +108,7 @@ const DivFooter = styled.div`
     padding: 4rem;
   }
 
-  @media(max-width: 1200px) {
+  @media(max-width: ${rWidths.tablet}) {
     padding: 3.850rem;
   }
 
@@ -117,15 +120,15 @@ const DivFooter = styled.div`
     padding: 3.6rem;
   }
 
-  @media(max-width: 900px) {
+  @media(max-width: ${rWidths.phone}) {
     padding: 1.8rem 3.6rem 3.6rem 3.6rem;
   }
 `;
 
 const PSignature = styled.p`
+  width: 100%;
   color: white;
   text-align: center;
-  width: 100%;
   font-size: 3rem;
 
   @media(max-width: 3300px) {
@@ -164,11 +167,11 @@ const PSignature = styled.p`
 const DivSocialMediaButtons = styled.div`
   display: none;
 
-  @media(max-width: 900px) {
+  @media(max-width: ${rWidths.phone}) {
     display: flex;
-    width: 27%;
     align-self: center;
     justify-content: space-evenly;
+    width: 27%;
     padding-bottom: 1.8rem;
   }
 
@@ -193,25 +196,19 @@ const DivSocialMediaButtons = styled.div`
   }
 `;
 
-const ASocialMediaIcon = styled.a`
-`;
-
-const ImgSocialMediaIcon= styled.img`
-`;
-
-/********************************************* Component ******************************************/
-const Footer = props => {
+//=========================================== component ===========================================
+const Footer = () => {
   return (
     <DivFooter>
       <DivSocialMediaButtons>
-        <ASocialMediaIcon href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
-          <ImgSocialMediaIcon src={require('../assets/img/linkedinphone.svg')} alt='linkedin-phone' />
-        </ASocialMediaIcon>
-        <ASocialMediaIcon href='https://github.com/jamespagedev' target='_blank'>
-          <ImgSocialMediaIcon src={require('../assets/img/githubphone.svg')} alt='linkedin-phone' />
-        </ASocialMediaIcon>
+        <a href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
+          <img src={require('../assets/img/linkedinphone.svg')} alt='linkedin-phone' />
+        </a>
+        <a href='https://github.com/jamespagedev' target='_blank'>
+          <img src={require('../assets/img/githubphone.svg')} alt='linkedin-phone' />
+        </a>
       </DivSocialMediaButtons>
-      <PSignature>© Copyright James Page 2019</PSignature>
+      <PSignature>©&nbsp;Copyright&nbsp;James&nbsp;C.&nbsp;Page&nbsp;2019</PSignature>
     </DivFooter>
   );
 };

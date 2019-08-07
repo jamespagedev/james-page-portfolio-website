@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/********************************************** Styles ********************************************/
+// globals
+import { rWidths, Colors } from '../../globals/CssMixins.js';
 
+//============================================ styles =============================================
 const DivResumeGutterWidth = styled.div`
   width: 50%;
   height: 40%;
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     height: 100%;
   }
 `;
@@ -16,37 +18,9 @@ const DivResume = styled.div`
   position: relative;
   width: 80%;
   background-color: white;
-  border: 2px solid black;
+  border: 0.2rem solid black;
 
-  @media (max-width: 3600px) {
-
-  }
-
-  @media (max-width: 3300px) {
-  }
-
-  @media (max-width: 3000px) {
-  }
-
-  @media (max-width: 2600px) {
-  }
-
-  @media (max-width: 2100px) {
-  }
-
-  @media (max-width: 1800px) {
-  }
-
-  @media (max-width: 1500px) {
-  }
-
-  @media (max-width: 1300px) {
-  }
-
-  @media (max-width: 1100px) {
-  }
-
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     width: 85%;
     margin: 3rem;
   }
@@ -64,7 +38,6 @@ const DivResume = styled.div`
   }
 
   @media (max-width: 400px) {
-    
     margin: 1.2rem;
   }
 
@@ -91,7 +64,7 @@ const DivResume = styled.div`
 }
 
 &:hover {
-  box-shadow: 0 15px 45px 0px #888888;
+  box-shadow: 0 1.5rem 4.5rem 0 ${Colors.Gray};
   cursor: pointer;
 
   p {
@@ -154,7 +127,7 @@ const PResumeTitle = styled.p`
     margin-top: 0.8rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     font-size: 3rem;
   }
 
@@ -214,25 +187,9 @@ const ImgPdf = styled.img`
   @media (max-width: 1100px) {
     padding: 2rem;
   }
-/* figure out good padding size once resume's are centered */
-  @media (max-width: 900px) {
-    padding: 2rem;
-  }
-
-  @media (max-width: 750px) {
-  }
-
-  @media (max-width: 600px) {
-  }
-
-  @media (max-width: 500px) {
-  }
-
-  @media (max-width: 400px) {
-  }
 `;
 
-/********************************************* Component ******************************************/
+//=========================================== component ===========================================
 const Resume = props => {
   const { resume } = props
   return (

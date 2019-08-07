@@ -3,22 +3,22 @@ import styled from 'styled-components';
 import { Link } from 'react-scroll';
 
 // globals
-import { Colors } from '../../globals/CssMixins.js';
+import { rWidths, Colors } from '../../globals/CssMixins.js';
 
-/********************************************** Styles ********************************************/
+//============================================ styles =============================================
 const DivWrapper = styled.div`
   display: flex;
   width: 100%;
   background: ${Colors.Woodsmoke2};
   z-index: 4001;
 
-  @media(max-width: 1200px) {
+  @media(max-width: ${rWidths.tablet}) {
     position: fixed;
     top: ${props => props.hamburgeropen === 'true' ? '8rem' : '-24rem'};
     transition: all 0.3s ease-in-out;
   }
 
-  @media(max-width: 900px) {
+  @media(max-width: ${rWidths.phone}) {
     display: none;
   }
 `;
@@ -45,7 +45,7 @@ const LinkNavItem = styled(Link)`
   }
 
   &.active {
-    color: #78d0fb;
+    color: ${Colors.Malibu};
   }
 
   &:hover {
@@ -54,7 +54,7 @@ const LinkNavItem = styled(Link)`
   }
 `;
 
-/********************************************* Component ******************************************/
+//=========================================== component ===========================================
 const TabletHamburgerDropdown = props => {
   return (
     <DivWrapper onClick={ev => ev.stopPropagation()} hamburgeropen={props.hamburgeropen.toString()}>

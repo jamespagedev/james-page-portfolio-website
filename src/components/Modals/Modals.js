@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import TabletHamburgerDropdown from './TabletHamburgerDropdown.js';
 import PhoneHamburgerDropdown from './PhoneHamburgerDropdown.js';
 
-/********************************************** Styles ********************************************/
+//============================================ styles =============================================
 const DivWrapper = styled.div`
   display: flex;
   position: fixed;
@@ -20,7 +20,7 @@ const DivWrapper = styled.div`
   transition: max-height 0.3s ease-in-out;
 `;
 
-/********************************************* Component ******************************************/
+//=========================================== component ===========================================
 const Modals = props => {
   return (
     <DivWrapper hamburgeropen={props.hamburgerOpen.toString()} onClick={ev => props.setHamburgerMenu(ev, false)}>

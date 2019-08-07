@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Components
+// components
 import TopSection from '../components/Portfolio/TopSection.js';
 import MidSection from '../components/Portfolio/MidSection.js';
 import BotSection from '../components/Portfolio/BotSection.js';
 
-/********************************************** Styles ********************************************/
-// Note: phone view 650 width.
+//============================================ styles =============================================
 const DivWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,8 +14,8 @@ const DivWrapper = styled.div`
   margin-top: 8rem;
 `;
 
-/********************************************* Component ******************************************/
-const PortfolioPage = props => {
+//=========================================== component ===========================================
+const PortfolioPage = () => {
   return (
     <DivWrapper>
       <TopSection />
