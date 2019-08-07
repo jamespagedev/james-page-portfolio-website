@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/********************************************** Styles ********************************************/
+// globals
+import { rWidths } from '../../globals/CssMixins.js';
+
+//============================================ styles =============================================
 const DivHamburger = styled.div`
   display: none;
 
@@ -9,12 +12,12 @@ const DivHamburger = styled.div`
     cursor: pointer;
   }
 
-  @media(max-width: 1200px) {
+  @media(max-width: ${rWidths.tablet}) {
     display: inline-block;
     padding: 0.8rem 3.5rem;
   }
 
-  @media(max-width: 900px) {
+  @media(max-width: ${rWidths.phone}) {
     display: inline-block;
     padding: 0.8rem 1.5rem;
   }
@@ -23,8 +26,8 @@ const DivHamburger = styled.div`
 const DivBarTop = styled.div`
   width: 4rem;
   height: 0.5rem;
-  background-color: white;
   margin: 1rem 0;
+  background-color: white;
   transition: 0.4s;
 
   transform: ${ props => props.hamburgeropen === 'true' && 'rotate(-45deg) translate(-1rem,1rem)'};
@@ -39,8 +42,8 @@ const DivBarTop = styled.div`
 const DivBarMid = styled.div`
   width: 4rem;
   height: 0.5rem;
-  background-color: white;
   margin: 1rem 0;
+  background-color: white;
   transition: 0.4s;
 
   opacity: ${ props => props.hamburgeropen === 'true' && '0'};
@@ -54,8 +57,8 @@ const DivBarMid = styled.div`
 const DivBarBot = styled.div`
   width: 4rem;
   height: 0.5rem;
-  background-color: white;
   margin: 1rem 0;
+  background-color: white;
   transition: 0.4s;
 
   transform: ${ props => props.hamburgeropen === 'true' && 'rotate(46deg) translate(-1.1rem,-1.1rem)'};
@@ -67,7 +70,7 @@ const DivBarBot = styled.div`
   }
 `;
 
-/********************************************* Component ******************************************/
+//=========================================== component ===========================================
 const Hamburger = props => {
   return (
     <DivHamburger onClick={ev => props.setHamburgerMenu(ev, !props.hamburgerOpen)}>

@@ -1,44 +1,43 @@
-// Libraries
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
-import { Colors } from '../../globals/CssMixins';
 
-/***************************************************************************************************
- ********************************************** Styles *********************************************
- **************************************************************************************************/
+// globals
+import { rWidths, Colors } from '../../globals/CssMixins.js';
+
+//============================================ styles =============================================
 const DivWrapper = styled.div`
   display: flex;
+  justify-content: center;
+  width: 60%;
   margin: 0;
   background: ${Colors.Vulcan};
-  width: 60%;
-  justify-content: center;
 
-  @media(max-width: 1200px) {
+  @media(max-width: ${rWidths.tablet}) {
     display: none;
   }
 `;
 
 const Nav = styled.nav`
   display: flex;
+  justify-content: space-evenly;
   height: 100%;
   width: 100%;
-  justify-content: space-evenly;
 `;
 
 const LinkNavItem = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   font-size: 5rem;
   font-weight: 300;
   font-style: normal;
   font-family: sans-serif;
   letter-spacing: 0.2em;
-  width: 100%;
   color: white;
   &.active {
-    color: #78d0fb;
+    color: ${Colors.Malibu};
     opacity: 0.7;
     text-decoration: underline;
   }
@@ -49,7 +48,7 @@ const LinkNavItem = styled(Link)`
   &:hover {
     transition: all 0.3s ease-in;
     opacity: 1;
-    color: #78d0fb;
+    color: ${Colors.Malibu};
   }
 
   @media (max-width: 2100px) {
@@ -61,9 +60,7 @@ const LinkNavItem = styled(Link)`
   }
 `;
 
-/***************************************************************************************************
- ********************************************* Component *******************************************
- **************************************************************************************************/
+//=========================================== component ===========================================
 const DesktopNav = props => {
   return (
     <DivWrapper>

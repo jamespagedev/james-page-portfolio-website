@@ -1,18 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Colors } from '../../globals/CssMixins';
+
+// globals
+import { rWidths, Colors } from '../../globals/CssMixins.js';
 
 // components
 import ContactForm from '../ContactForm.js';
 
-/********************************************** Styles ********************************************/
+//============================================ styles =============================================
 const SectionBot = styled.section`
   display: flex;
+  position: relative;
   width: 100%;
   background-color: ${Colors.Vulcan};
-  position: relative;
   color: white;
-  border-bottom: 4px solid #4deeea;
+  border-bottom: 0.4rem solid ${Colors.TurquoiseBlue};
 
   &::before {
     content: "";
@@ -25,7 +27,7 @@ const SectionBot = styled.section`
     z-index: 2;
     clip-path: polygon(0% 100%, 55.5% 100%, 55.5% 0%, 0% 0%);
 
-    @media (max-width: 900px) {
+    @media (max-width: ${rWidths.phone}) {
       display: none
     }
   }
@@ -37,22 +39,22 @@ const SectionBot = styled.section`
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #4deeea;
+    background-color: ${Colors.TurquoiseBlue};
     z-index: 1;
     clip-path: polygon(0% 100%, 56% 100%, 56% 0%, 0% 0%);
 
-    @media (max-width: 900px) {
+    @media (max-width: ${rWidths.phone}) {
       display: none
     }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     flex-direction: column;
     border-bottom: none;
   }
 `;
 
-/*-------------------------------------------- contact -------------------------------------------*/
+//-------------------------------------------- contact --------------------------------------------
 const DivContactSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -65,16 +67,16 @@ const DivContactSection = styled.div`
     padding: 2rem 0;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     width: 100%;
-    border-bottom: 4px solid #4deeea;
+    border-bottom: 0.4rem solid ${Colors.TurquoiseBlue};
   }
 `;
 
 const H2ContactTitle = styled.div`
-  font-size: 7rem;
   width: 90%;
   margin-bottom: 17rem;
+  font-size: 7rem;
   font-weight: lighter;
 
   @media (max-width: 3600px) {
@@ -142,10 +144,10 @@ const H2ContactTitle = styled.div`
     font-size: 2.8rem;
   }
 
-  @media (max-width: 900px) {
-    width: 83%;
+  @media (max-width: ${rWidths.phone}) {
     font-size: 3.2rem;
     margin-bottom: 6rem;
+    width: 83%;
   }
 
   @media (max-width: 800px) {
@@ -167,14 +169,14 @@ const H2ContactTitle = styled.div`
   }
 `;
 
-/*------------------------------------------ social media ----------------------------------------*/
+//----------------------------------------- social media ------------------------------------------
 const DivSocialMediaSection = styled.div`
   display: flex;
-  width: 45%;
   justify-content: center;
   align-items: center;
+  width: 45%;
 
-  @media (max-width:900px) {
+  @media (max-width:${rWidths.phone}) {
     display: none;
   }
 `;
@@ -190,8 +192,8 @@ const DivSocialMediaContainer = styled.div`
 const DivLinkedin = styled.div`
   display: block;
   width: 100%;
-  border-top: 4px solid #78d0fb;
-  border-bottom: 4px solid #78d0fb;
+  border-top: 0.4rem solid ${Colors.Malibu};
+  border-bottom: 0.4rem solid ${Colors.Malibu};
 `;
 
 const ALinkedIn = styled.a`
@@ -206,18 +208,18 @@ const ALinkedIn = styled.a`
 `;
 
 const ImgLinkedIn = styled.img`
-  width: 50%;
   align-self: center;
+  width: 50%;
   padding: 4rem 0;
 `;
 
 const DivGithub = styled.div`
   display: block;
   width: 100%;
-  border-bottom: 4px solid #78d0fb;
+  border-bottom: 0.4rem solid ${Colors.Malibu};
 `;
 
-/********************************************* Component ******************************************/
+//=========================================== component ===========================================
 const BotSection = props => {
   return (
     <SectionBot id="contact">

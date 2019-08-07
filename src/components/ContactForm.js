@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/********************************************** Styles ********************************************/
+// globals
+import { rWidths, Colors } from '../globals/CssMixins.js';
+
+//============================================ styles =============================================
 const DivContactContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -136,7 +139,7 @@ const InputContact = styled.input`
   outline: none;
   font-size: 6rem;
   padding: 1.5rem;
-  border-radius: 25px;
+  border-radius: 2.5rem;
 
   @media (max-width: 3600px) {
     font-size: 5.6rem;
@@ -215,7 +218,7 @@ const InputContact = styled.input`
     width: 82%;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: ${rWidths.tablet}) {
     width: 81%;
   }
 
@@ -248,17 +251,17 @@ const InputContact = styled.input`
 
 const DivTextArea = styled.div`
   display: flex;
+  flex-direction: column;
   width: 90%;
   margin-bottom: 6rem;
-  flex-direction: column;
 
   textarea {
     border-radius: 1.5rem;
     outline: none;
     padding: 2.5rem;
+    margin-top: 3rem;
     resize: none;
     font-size: 6rem;
-    margin-top: 3rem;
 
     @media (max-width: 3600px) {
       font-size: 5.6rem;
@@ -309,8 +312,8 @@ const DivTextArea = styled.div`
     }
 
     @media (max-width: 2000px) {
-      margin-top: 0;
       font-size: 2.6rem;
+      margin-top: 0;
     }
 
     @media (max-width: 1600px) {
@@ -378,16 +381,13 @@ const DivButtons = styled.div`
 
 const ButtonContact = styled.button`
   width: 20%;
-  outline: none;
-  font-size: 6rem;
   padding: 2rem 0;
   border-radius: 2rem;
-  background-color: #146a94;
-    background: linear-gradient(to top,#78d0fb,#146a94);
-    border-color: #146a94;
-  background-color: ${props => props.submit ? '146a94' : '#dddddd'};
+  background-color: ${props => props.submit ? Colors.Matisse : Colors.Alto};
   background: ${props => props.submit ? 'linear-gradient(to top, #146a94, #78d0fb)' : 'linear-gradient(to top, #dddddd, #ffffff)'};
-  border-color: ${props => props.submit ? '#2279a3' : '#dddddd'};
+  border-color: ${props => props.submit ? Colors.JellyBean : Colors.Alto};
+  font-size: 6rem;
+  outline: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
@@ -475,7 +475,7 @@ const ButtonContact = styled.button`
     width: 23%;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: ${rWidths.tablet}) {
     width: 24%;
   }
 
@@ -524,8 +524,8 @@ const ButtonContact = styled.button`
   }
 `;
 
-/********************************************* Component ******************************************/
-const ContactForm = props => {
+//=========================================== component ===========================================
+const ContactForm = () => {
   return (
     <DivContactContainer>
       <FormContact>

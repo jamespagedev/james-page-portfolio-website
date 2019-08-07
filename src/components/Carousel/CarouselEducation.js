@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Card from './Card.js';
 
+// globals
+import { rWidths, Colors } from '../../globals/CssMixins.js';
+
 // Variables
 const pictures = [
   {
@@ -23,7 +26,7 @@ const pictures = [
 ]
 const totalPictures = pictures.length;
 
-/********************************************** Styles ********************************************/
+//============================================ styles =============================================
 const DivWrapper = styled.div`
   display: flex;
   align-items: flex-start;
@@ -43,11 +46,11 @@ const DivWrapper = styled.div`
     padding: 0 10rem 5rem 0;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: ${rWidths.tablet}) {
     padding: 0 7rem 5rem 0;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     padding: 0;
   }
 `;
@@ -56,28 +59,28 @@ const NavSelector = styled.nav`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 2.5rem;
 
   @media (max-width: 500px) {
-    margin-bottom: 20px;
+    margin-bottom: 2.0rem;
   }
 `;
 
 const ButtonSelector = styled.button`
   display: flex;
-  width: 23%;
-  font-size: 2.6rem;
-  padding: 15px 7px;
-  letter-spacing: 1px;
-  font-weight: bold;
   justify-content: center;
-  background-color: ${props => props.selected ? '#5E9FB9' : 'white'};
-  border: 1px solid black;
+  width: 23%;
+  padding: 1.5rem 0.7rem;
+  background-color: ${props => props.selected ? Colors.HippieBlue : 'white'};
+  border: 0.1rem solid black;
+  font-size: 2.6rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
   cursor: pointer;
   outline: none;
   &:hover {
     color: white;
-    background-color: #9AA5B0;
+    background-color: ${Colors.GrayChateau};
   }
 
   @media (max-width: 2400px) {
@@ -93,11 +96,11 @@ const ButtonSelector = styled.button`
   }
 
   @media (max-width: 1550px) {
-    padding: 15px 25px;
+    padding: 1.5rem 2.5rem;
   }
 
   @media (max-width: 500px) {
-    padding: 10px 7px;
+    padding: 1rem 0.7rem;
   }
 
   @media (max-width: 400px) {
@@ -109,7 +112,7 @@ const ButtonSelector = styled.button`
   }
 `;
 
-/********************************************* Component ******************************************/
+//=========================================== component ===========================================
 class CarouselEducation extends Component {
   constructor(props) {
     super(props);

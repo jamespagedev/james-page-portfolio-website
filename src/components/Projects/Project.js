@@ -1,17 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/********************************************** Styles ********************************************/
+// globals
+import { rWidths, Colors } from '../../globals/CssMixins.js';
+
+//============================================ styles =============================================
 const DivWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background: white;
   width: 100%;
+  background: white;
 
   &:not(:last-child) {
     margin-bottom: 5rem;
 
-    @media (max-width: 900px) {
+    @media (max-width: ${rWidths.phone}) {
       margin-bottom: 3rem;
     }
   }
@@ -22,7 +25,7 @@ const DivProjectDetails = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 25px;
+  margin-top: 2.5rem;
   padding: 0 7rem;
 
   @media (max-width: 3300px) {
@@ -53,7 +56,7 @@ const DivProjectDetails = styled.div`
     padding: 0 1rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     padding: 0 2rem;
   }
 
@@ -64,7 +67,7 @@ const DivProjectDetails = styled.div`
 
 const DivProjectImage = styled.div`
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 0.1rem solid black;
 `;
 
 const ImgProject = styled.img`
@@ -73,11 +76,11 @@ const ImgProject = styled.img`
 `;
 
 const H2Title = styled.h2`
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: center;
   font-size: 6rem;
   font-weight: bold;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 1.5rem;
 
   @media (max-width: 3000px) {
     font-size: 5rem;
@@ -109,7 +112,7 @@ const H2Title = styled.h2`
     margin-bottom: 0.5rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     font-size: 3rem;
     margin-bottom: 1rem;
   }
@@ -136,9 +139,9 @@ const H2Title = styled.h2`
 
 const HRTitle = styled.hr`
   width: 80rem;
-  height: 3px;
+  height: 0.3rem;
+  margin: 1rem 0 3.5rem;
   background: black;
-  margin: 10px 0 35px;
 
   @media (max-width: 3000px) {
     width: 67rem;
@@ -150,17 +153,17 @@ const HRTitle = styled.hr`
 
   @media (max-width: 2100px) {
     width: 46rem;
-    margin: 5px 0 30px;
+    margin: 0.5rem 0 3rem;
   }
 
   @media (max-width: 1800px) {
     width: 40rem;
-    margin: 0 0 25px;
+    margin: 0 0 2.5rem;
   }
 
   @media (max-width: 1500px) {
     width: 35rem;
-    margin: 0 0 10px;
+    margin: 0 0 1rem;
   }
 
   @media (max-width: 1300px) {
@@ -171,7 +174,7 @@ const HRTitle = styled.hr`
     width: 22rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     width: 40.5rem;
   }
 
@@ -185,7 +188,7 @@ const HRTitle = styled.hr`
 
   @media (max-width: 500px) {
     width: 25.5rem;
-    margin: 0 0 15px;
+    margin: 0 0 1.5rem;
   }
 
   @media (max-width: 400px) {
@@ -194,10 +197,10 @@ const HRTitle = styled.hr`
 `;
 
 const H3Summary = styled.h3`
-  font-size: 4rem;
   width: 100%;
-  text-align: center;
   margin-bottom: 10rem;
+  text-align: center;
+  font-size: 4rem;
   line-height: 5rem;
 
   @media (max-width: 3300px) {
@@ -245,7 +248,7 @@ const H3Summary = styled.h3`
     margin-bottom: 2rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     font-size: 2.1rem;
     line-height: 3rem;
   }
@@ -300,7 +303,7 @@ const DivLinks = styled.div`
     margin-bottom: 2rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     flex-direction: column;
     align-items: center;
     margin-bottom: 0;
@@ -308,41 +311,41 @@ const DivLinks = styled.div`
 `;
 
 const ALink = styled.a`
-  width: 380px;
+  width: 38rem;
 
   @media (max-width: 3300px) {
-    width: 340px;
+    width: 34rem;
   }
 
   @media (max-width: 3000px) {
-    width: 290px;
+    width: 29rem;
   }
 
   @media (max-width: 2600px) {
-    width: 250px;
+    width: 25rem;
   }
 
   @media (max-width: 2100px) {
-    width: 200px;
+    width: 20rem;
   }
 
   @media (max-width: 1800px) {
-    width: 170px;
+    width: 17rem;
   }
 
   @media (max-width: 1500px) {
-    width: 150px;
+    width: 15rem;
   }
 
   @media (max-width: 1300px) {
-    width: 120px;
+    width: 12rem;
   }
 
   @media (max-width: 1100px) {
-    width: 100px;
+    width: 10rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     width: 40%;
     margin-bottom: 2rem;
   }
@@ -356,12 +359,12 @@ const ALink = styled.a`
 `;
 
 const ButtonLink = styled.button`
-  border: 1px solid black;
+  width: 100%;
+  padding: 2rem 0;
+  border: 0.1rem solid black;
   background: white;
   color: black;
   font-size: 5rem;
-  padding: 2rem 0;
-  width: 100%;
   outline: none;
 
   @media (max-width: 3300px) {
@@ -398,7 +401,7 @@ const ButtonLink = styled.button`
     font-size: 1.4rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     font-size: 3rem;
   }
 
@@ -412,12 +415,12 @@ const ButtonLink = styled.button`
 
   &:hover {
     cursor: pointer;
-    background: #111111;
+    background: ${Colors.darkerCodGray};
     color: white;
   }
 `;
 
-/********************************************* Component ******************************************/
+//=========================================== component ===========================================
 const Project = props => {
   return (
     <DivWrapper>

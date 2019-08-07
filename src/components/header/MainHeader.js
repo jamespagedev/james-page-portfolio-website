@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Colors } from '../../globals/CssMixins';
+
+// globals
+import { rWidths, Colors } from '../../globals/CssMixins.js';
 
 // components
 import DesktopNav from './DesktopNav.js';
@@ -9,27 +11,25 @@ import Hamburger from './Hamburger.js'
 // images
 import myFaceImgImg from '../../assets/img/myFace.png';
 
-/***************************************************************************************************
- ********************************************** Styles *********************************************
- **************************************************************************************************/
+//============================================ styles =============================================
 const DivWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0;
-  border-bottom: 4px solid #4deeea;
-  background-color: ${Colors.Vulcan};
+  position: fixed;
   width: 100%;
   height: 8rem;
-  position: fixed;
+  margin: 0;
+  border-bottom: 0.4rem solid ${Colors.TurquoiseBlue};
+  background-color: ${Colors.Vulcan};
   z-index: 5000;
 `;
 
 const DivImgName= styled.div`
   display: flex;
-  width: 24%;
   justify-content: center;
   align-items: center;
+  width: 24%;
 
   @media (max-width: 2500px) {
     width: 25%;
@@ -75,12 +75,12 @@ const DivImgName= styled.div`
     width: 39.5%;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: ${rWidths.tablet}) {
     width: 35rem;
     margin-left: 3.5rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     width: 35rem;
     margin-left: 1.5rem;
   }
@@ -98,7 +98,7 @@ const DivImgName= styled.div`
 const ImgFace = styled.img`
   width: 6rem;
   height: 6rem;
-  border-radius: 15px;
+  border-radius: 1.5rem;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -115,11 +115,11 @@ const ImgFace = styled.img`
 const H1Logo = styled.h1`
   padding: 0 0 1rem 2rem;
   user-select: none;
-  color: #78d0fb;
+  color: ${Colors.Malibu};
   font-weight: bold;
   font-size: 5rem;
 
-  @media (max-width: 1200px) {
+  @media (max-width: ${rWidths.tablet}) {
     font-size: 4rem;
   }
 
@@ -134,9 +134,7 @@ const H1Logo = styled.h1`
   }
 `;
 
-/***************************************************************************************************
- ********************************************* Component *******************************************
- **************************************************************************************************/
+//=========================================== component ===========================================
 const MainHeader = props => {
   return (
     <DivWrapper>
