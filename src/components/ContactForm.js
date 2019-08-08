@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // globals
 import { rWidths, Colors } from '../globals/CssMixins.js';
+
+// variables
+const defaultFormValues = {
+  name: '',
+  email: '',
+  subject: '',
+  message: ''
+}
 
 //============================================ styles =============================================
 const DivContactContainer = styled.div`
@@ -525,33 +533,50 @@ const ButtonContact = styled.button`
 `;
 
 //=========================================== component ===========================================
-const ContactForm = () => {
-  return (
-    <DivContactContainer>
-      <FormContact>
-        <DivInput>
-          <LabelContact htmlFor="name" name="true">Name:&nbsp;</LabelContact>
-          <InputContact type="text" name="name" id="name" required />
-        </DivInput>
-        <DivInput>
-          <LabelContact htmlFor="email" email="true">Email:&nbsp;</LabelContact>
-          <InputContact type="email" name="email" id="email" required />
-        </DivInput>
-        <DivInput>
-          <LabelContact htmlFor="subject" subject="true">Subject:&nbsp;</LabelContact>
-          <InputContact type="text" name="subject" id="subject" autoComplete="off" required />
-        </DivInput>
-        <DivTextArea>
-          <LabelContact htmlFor="message">Message:</LabelContact>
-          <textarea name="message" id="message" rows="6" required />
-        </DivTextArea>
-        <DivButtons>
-          <ButtonContact submit type="button">Send</ButtonContact>
-          <ButtonContact type="button">Clear</ButtonContact>
-        </DivButtons>
-      </FormContact>
-    </DivContactContainer>
-  );
+class ContactForm extends Component {
+  constructor(props){
+    super(props);
+    this.state = Object.assign({}, defaultFormValues);
+  }
+
+  handleChange = ev => {
+    ev.preventDefault();
+    this.setState({[ev.target.name]: ev.target.value});
+  }
+
+  handleClear = ev => {
+    ev.preventDefault();
+    this.setState(Object.assign({}, defaultFormValues))
+  }
+
+  render() {
+    return (
+      <DivContactContainer>
+        <FormContact>
+          <DivInput>
+            <LabelContact htmlFor="name" name="true">Name:&nbsp;</LabelContact>
+            <InputContact type="text" name="name" id="name" value={this.state.name} onChange={this.handleChange} required />
+          </DivInput>
+          <DivInput>
+            <LabelContact htmlFor="email" email="true">Email:&nbsp;</LabelContact>
+            <InputContact type="email" name="email" id="email" value={this.state.email} onChange={this.handleChange} required />
+          </DivInput>
+          <DivInput>
+            <LabelContact htmlFor="subject" subject="true">Subject:&nbsp;</LabelContact>
+            <InputContact type="text" name="subject" id="subject" autoComplete="off" value={this.state.subject} onChange={this.handleChange} required />
+          </DivInput>
+          <DivTextArea>
+            <LabelContact htmlFor="message">Message:</LabelContact>
+            <textarea name="message" id="message" rows="6" value={this.state.message} onChange={this.handleChange} required />
+          </DivTextArea>
+          <DivButtons>
+            <ButtonContact type="button">Send</ButtonContact>
+            <ButtonContact type="button" onClick={ev => this.handleClear(ev)}>Clear</ButtonContact>
+          </DivButtons>
+        </FormContact>
+      </DivContactContainer>
+    );
+  }
 };
 
 export default ContactForm;
