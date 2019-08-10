@@ -383,9 +383,9 @@ const ButtonContact = styled.button`
   width: 20%;
   padding: 2rem 0;
   border-radius: 2rem;
-  background-color: ${props => props.submit ? Colors.Matisse : Colors.Alto};
-  background: ${props => props.submit ? 'linear-gradient(to top, #146a94, #78d0fb)' : 'linear-gradient(to top, #dddddd, #ffffff)'};
-  border-color: ${props => props.submit ? Colors.JellyBean : Colors.Alto};
+  background-color: ${props => props.send ? Colors.Matisse : Colors.Alto};
+  background: ${props => props.send ? 'linear-gradient(to top, #146a94, #78d0fb)' : 'linear-gradient(to top, #dddddd, #ffffff)'};
+  border-color: ${props => props.send ? Colors.JellyBean : Colors.Alto};
   font-size: 6rem;
   outline: none;
   cursor: pointer;
@@ -393,7 +393,7 @@ const ButtonContact = styled.button`
   user-select: none;
 
   &:active {
-    background: ${props => props.submit ? 'linear-gradient(to top, #78d0fb, #146a94)' : 'linear-gradient(to top, #ffffff, #dddddd)'};
+    background: ${props => props.send ? 'linear-gradient(to top, #78d0fb, #146a94)' : 'linear-gradient(to top, #ffffff, #dddddd)'};
     text-decoration: none;
   }
 
@@ -525,29 +525,29 @@ const ButtonContact = styled.button`
 `;
 
 //=========================================== component ===========================================
-const ContactForm = () => {
+const ContactForm = props => {
   return (
     <DivContactContainer>
       <FormContact>
         <DivInput>
           <LabelContact htmlFor="name" name="true">Name:&nbsp;</LabelContact>
-          <InputContact type="text" name="name" id="name" required />
+          <InputContact type="text" name="name" id="name" value={props.contactData.name} onChange={props.handleChange} required />
         </DivInput>
         <DivInput>
           <LabelContact htmlFor="email" email="true">Email:&nbsp;</LabelContact>
-          <InputContact type="email" name="email" id="email" required />
+          <InputContact type="email" name="email" id="email" value={props.contactData.email} onChange={props.handleChange} required />
         </DivInput>
         <DivInput>
           <LabelContact htmlFor="subject" subject="true">Subject:&nbsp;</LabelContact>
-          <InputContact type="text" name="subject" id="subject" autoComplete="off" required />
+          <InputContact type="text" name="subject" id="subject" autoComplete="off" value={props.contactData.subject} onChange={props.handleChange} required />
         </DivInput>
         <DivTextArea>
           <LabelContact htmlFor="message">Message:</LabelContact>
-          <textarea name="message" id="message" rows="6" required />
+          <textarea name="message" id="message" rows="6" value={props.contactData.message} onChange={props.handleChange} required />
         </DivTextArea>
         <DivButtons>
-          <ButtonContact submit type="button">Send</ButtonContact>
-          <ButtonContact type="button">Clear</ButtonContact>
+          <ButtonContact send type="button" onClick={ev => props.handleSend(ev)}>Send</ButtonContact>
+          <ButtonContact type="button" onClick={ev => props.handleClear(ev)}>Clear</ButtonContact>
         </DivButtons>
       </FormContact>
     </DivContactContainer>

@@ -11,10 +11,9 @@ const DivWrapper = styled.div`
   width: 100%;
   background: ${Colors.Woodsmoke2};
   z-index: 4001;
-  height: 35rem;
 
   @media(max-width: ${rWidths.phone}) {
-    display: flex;
+    display: ${props => props.nothamburger === 'true' ? 'none' : 'flex'};
     position: fixed;
     top: ${props => props.hamburgeropen === 'true' ? '8rem' : '-40rem'};
     transition: all 0.3s ease-in-out;
@@ -51,7 +50,7 @@ const LinkNavItem = styled(Link)`
 //=========================================== component ===========================================
 const PhoneHamburgerDropdown = props => {
   return (
-    <DivWrapper onClick={ev => ev.stopPropagation()} hamburgeropen={props.hamburgeropen.toString()}>
+    <DivWrapper onClick={ev => ev.stopPropagation()} nothamburger={props.modalFullSize.toString()} hamburgeropen={props.hamburgeropen.toString()}>
       <Nav hamburgeropen={props.hamburgeropen.toString()}>
         <LinkNavItem
           hamburgeropen={props.hamburgeropen.toString()}

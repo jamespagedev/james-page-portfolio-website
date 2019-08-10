@@ -195,7 +195,7 @@ const Resume = props => {
   return (
     <DivResumeGutterWidth>
       <DivResume>
-        <AWordDownload href={resume.resumeLink} target='_blank'>
+        <AWordDownload href={resume.resumeLink} target='_blank' rel="noopener noreferrer">
           <PResumeTitle>{resume.resumeTitle}</PResumeTitle>
           <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
         </AWordDownload>

@@ -225,17 +225,17 @@ const BotSection = props => {
     <SectionBot id="contact">
       <DivContactSection>
         <H2ContactTitle>Looking to gain a position where I can use my dev skills to build great software. Lets chat... </H2ContactTitle>
-        <ContactForm />
+        <ContactForm {...props} />
       </DivContactSection>
       <DivSocialMediaSection>
         <DivSocialMediaContainer>
           <DivLinkedin>
-            <ALinkedIn href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
+            <ALinkedIn href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank' rel="noopener noreferrer">
               <ImgLinkedIn src={require('../../assets/img/linkedindesktop.svg')} alt='linkedin-desktop' />
             </ALinkedIn>
           </DivLinkedin>
           <DivGithub>
-            <ALinkedIn href='https://github.com/jamespagedev' target='_blank'>
+            <ALinkedIn href='https://github.com/jamespagedev' target='_blank' rel="noopener noreferrer">
               <ImgLinkedIn src={require('../../assets/img/githubdesktop.svg')} alt='linkedin-desktop' />
             </ALinkedIn>
           </DivGithub>
