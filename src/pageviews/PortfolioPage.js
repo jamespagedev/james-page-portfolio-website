@@ -15,12 +15,19 @@ const DivWrapper = styled.div`
 `;
 
 //=========================================== component ===========================================
-const PortfolioPage = () => {
+const PortfolioPage = props => {
   return (
     <DivWrapper>
       <TopSection />
       <MidSection />
-      <BotSection />
+      <BotSection
+        setContactMessageModal={props.setContactMessageModal}
+        sendContact={props.sendContact}
+        handleChange={props.handleChange}
+        handleSend={props.handleSend}
+        handleClear={props.handleClear}
+        contactData={props.contactData}
+      />
     </DivWrapper>
   );
 };

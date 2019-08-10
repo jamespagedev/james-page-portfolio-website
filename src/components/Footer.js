@@ -201,10 +201,10 @@ const Footer = () => {
   return (
     <DivFooter>
       <DivSocialMediaButtons>
-        <a href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
+        <a href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank' rel="noopener noreferrer">
           <img src={require('../assets/img/linkedinphone.svg')} alt='linkedin-phone' />
         </a>
-        <a href='https://github.com/jamespagedev' target='_blank'>
+        <a href='https://github.com/jamespagedev' target='_blank' rel="noopener noreferrer">
           <img src={require('../assets/img/githubphone.svg')} alt='linkedin-phone' />
         </a>
       </DivSocialMediaButtons>

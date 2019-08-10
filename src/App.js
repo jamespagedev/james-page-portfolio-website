@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import axios from 'axios';
 
 // globals
 import { Colors } from './globals/CssMixins';
@@ -9,6 +10,15 @@ import MainHeader from './components/header/MainHeader';
 import Modals from './components/Modals/Modals.js';
 import PortfolioPage from './pageviews/PortfolioPage.js';
 import Footer from './components/Footer.js';
+
+// variables
+const defaultContactData = {
+  sendtype: 'portfolio',
+  name: '',
+  email: '',
+  subject: '',
+  message: ''
+}
 
 //============================================ styles =============================================
 const DivWrapper = styled.div`
@@ -90,13 +100,62 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hamburgerOpen: false
+      keepModalOpenOnClick: false,
+      modalOpen: false,
+      modalFullSize: false,
+      hamburgerOpen: false,
+      contactModalOpen: false,
+      contactModalType: '',
+      contactModalTypes: {
+        pending: 'pending',
+        success: 'success',
+        failure: 'failure'
+      },
+      contactData: defaultContactData
     };
+  }
+
+  closeModal = (ev) => {
+    ev.preventDefault();
+    (!this.state.keepModalOpenOnClick) && this.setState({keepModalOpenOnClick: false, modalOpen: false, modalFullSize: false, hamburgerOpen: false, contactModalOpen: false, contactModalType: ''});
   }
 
   setHamburgerMenu = (ev, status) => {
     ev.preventDefault();
-    this.setState({hamburgerOpen: status});
+    this.setState({modalOpen: status, modalFullSize: false, keepModalOpenOnClick: false, hamburgerOpen: status});
+  }
+
+  setContactMessageModal = (ev, status, contactModalType) => {
+    ev.preventDefault();
+    this.setState({modalOpen: status, modalFullSize: true, keepModalOpenOnClick: true, contactModalOpen: status, contactModalType: contactModalType});
+  }
+
+  sendContact = (ev) => {
+    ev.preventDefault();
+
+    Promise.resolve(this.setContactMessageModal(true, true, this.state.contactModalTypes.pending))
+      .then(() => 
+        axios.post('http://localhost:5012/main-email/send', this.state.contactData)
+          .then(res => {console.log(res); this.setContactMessageModal(true, true, this.state.contactModalTypes.success)})
+          .catch(err => {console.log(err); this.setContactMessageModal(true, true, this.state.contactModalTypes.failure)})
+      );
+  }
+
+  handleChange = ev => {
+    ev.preventDefault();
+    this.setState({contactData: {...this.state.contactData, [ev.target.name]: ev.target.value}}); // test this...
+  }
+
+  handleSend = ev => {
+    ev.preventDefault();
+    // const contactData = this.state.contactData;
+    // this.setContactMessageModal(ev, true, 'pending');
+    // this.props.sendContact(ev, contactData);
+  }
+
+  handleClear = ev => {
+    ev.preventDefault();
+    this.setState({contactData: Object.assign({}, defaultContactData)})
   }
 
   render() {
@@ -104,8 +163,23 @@ class App extends Component {
       <DivWrapper>
         <GlobalStyle />
         <MainHeader hamburgerOpen={this.state.hamburgerOpen} setHamburgerMenu={this.setHamburgerMenu}/>
-        <Modals hamburgerOpen={this.state.hamburgerOpen} setHamburgerMenu={this.setHamburgerMenu}/>
-        <PortfolioPage />
+        <Modals
+          modalOpen={this.state.modalOpen}
+          modalFullSize={this.state.modalFullSize}
+          contactModalType={this.state.contactModalType}
+          contactModalTypes={this.state.contactModalTypes}
+          hamburgerOpen={this.state.hamburgerOpen}
+          setHamburgerMenu={this.setHamburgerMenu}
+          closeModal={this.closeModal}
+        />
+        <PortfolioPage 
+          setContactMessageModal={this.setContactMessageModal}
+          sendContact={this.sendContact}
+          handleChange={this.handleChange}
+          handleSend={this.handleSend}
+          handleClear={this.handleClear}
+          contactData={this.state.contactData}
+        />
         <Footer />
       </DivWrapper>
     );

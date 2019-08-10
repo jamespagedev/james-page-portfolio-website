@@ -7,7 +7,7 @@ import { rWidths, Colors } from '../../globals/CssMixins.js';
 
 //============================================ styles =============================================
 const DivWrapper = styled.div`
-  display: flex;
+  display: ${props => props.nothamburger === 'true' ? 'none' : 'flex'};
   width: 100%;
   background: ${Colors.Woodsmoke2};
   z-index: 4001;
@@ -57,7 +57,7 @@ const LinkNavItem = styled(Link)`
 //=========================================== component ===========================================
 const TabletHamburgerDropdown = props => {
   return (
-    <DivWrapper onClick={ev => ev.stopPropagation()} hamburgeropen={props.hamburgeropen.toString()}>
+    <DivWrapper onClick={ev => ev.stopPropagation()} nothamburger={props.modalFullSize.toString()} hamburgeropen={props.hamburgeropen.toString()}>
       <Nav hamburgeropen={props.hamburgeropen.toString()}>
         <LinkNavItem
           hamburgeropen={props.hamburgeropen.toString()}
