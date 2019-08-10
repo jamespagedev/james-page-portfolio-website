@@ -111,13 +111,19 @@ class App extends Component {
         success: 'success',
         failure: 'failure'
       },
-      contactData: defaultContactData
+      contactData: defaultContactData,
+      contactError: ''
     };
   }
 
   closeModal = (ev) => {
     ev.preventDefault();
-    (!this.state.keepModalOpenOnClick) && this.setState({keepModalOpenOnClick: false, modalOpen: false, modalFullSize: false, hamburgerOpen: false, contactModalOpen: false, contactModalType: ''});
+    this.setState({keepModalOpenOnClick: false, modalOpen: false, modalFullSize: false, hamburgerOpen: false, contactModalOpen: false, contactModalType: '', contactError: ''});
+  }
+
+  closeModalOnBackground = (ev) => {
+    ev.preventDefault();
+    (!this.state.keepModalOpenOnClick) && this.closeModal(ev);
   }
 
   setHamburgerMenu = (ev, status) => {
@@ -125,19 +131,22 @@ class App extends Component {
     this.setState({modalOpen: status, modalFullSize: false, keepModalOpenOnClick: false, hamburgerOpen: status});
   }
 
-  setContactMessageModal = (ev, status, contactModalType) => {
-    ev.preventDefault();
-    this.setState({modalOpen: status, modalFullSize: true, keepModalOpenOnClick: true, contactModalOpen: status, contactModalType: contactModalType});
+  setContactMessageModal = (status, contactModalType, err='') => {
+    this.setState({modalOpen: status, modalFullSize: true, keepModalOpenOnClick: true, contactModalOpen: status, contactModalType: contactModalType, contactError: err.toString()});
   }
 
   sendContact = (ev) => {
     ev.preventDefault();
 
-    Promise.resolve(this.setContactMessageModal(true, true, this.state.contactModalTypes.pending))
+    /* emails:
+        http://localhost:5012/test-email/send
+        http://localhost:5012/main-email/send
+    */
+    Promise.resolve(this.setContactMessageModal(true, this.state.contactModalTypes.pending))
       .then(() => 
-        axios.post('http://localhost:5012/main-email/send', this.state.contactData)
-          .then(res => {console.log(res); this.setContactMessageModal(true, true, this.state.contactModalTypes.success)})
-          .catch(err => {console.log(err); this.setContactMessageModal(true, true, this.state.contactModalTypes.failure)})
+        axios.post('https://jamespagedev-email-server.herokuapp.com/main-email/send', this.state.contactData)
+          .then(res => {console.log(res); this.setContactMessageModal(true, this.state.contactModalTypes.success)})
+          .catch(err => {console.log(err); this.setContactMessageModal(true, this.state.contactModalTypes.failure, err)})
       );
   }
 
@@ -148,14 +157,24 @@ class App extends Component {
 
   handleSend = ev => {
     ev.preventDefault();
-    // const contactData = this.state.contactData;
-    // this.setContactMessageModal(ev, true, 'pending');
-    // this.props.sendContact(ev, contactData);
+    const contactData = this.state.contactData;
+    // this.setContactMessageModal(true, 'success');
+    this.sendContact(ev, contactData);
   }
 
   handleClear = ev => {
     ev.preventDefault();
     this.setState({contactData: Object.assign({}, defaultContactData)})
+  }
+
+  contactSuccessModalButton = ev => {
+    ev.preventDefault();
+    Promise.resolve(this.handleClear(ev)).then(() => this.closeModal(ev));
+  }
+
+  contactFailureModalButton = ev => {
+    ev.preventDefault();
+    this.closeModal(ev);
   }
 
   render() {
@@ -171,6 +190,10 @@ class App extends Component {
           hamburgerOpen={this.state.hamburgerOpen}
           setHamburgerMenu={this.setHamburgerMenu}
           closeModal={this.closeModal}
+          closeModalOnBackground={this.closeModalOnBackground}
+          contactSuccessModalButton={this.contactSuccessModalButton}
+          contactFailureModalButton={this.contactFailureModalButton}
+          contactError={this.state.contactError}
         />
         <PortfolioPage 
           setContactMessageModal={this.setContactMessageModal}

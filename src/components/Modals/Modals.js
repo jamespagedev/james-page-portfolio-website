@@ -26,12 +26,12 @@ const DivWrapper = styled.div`
 //=========================================== component ===========================================
 const Modals = props => {
   return (
-    <DivWrapper modalOpen={props.modalOpen.toString()} modalFullSize={props.modalFullSize.toString()} hamburgeropen={props.hamburgerOpen.toString()} onClick={ev => props.closeModal(ev)}>
+    <DivWrapper modalOpen={props.modalOpen.toString()} modalFullSize={props.modalFullSize.toString()} hamburgeropen={props.hamburgerOpen.toString()} onClick={ev => props.closeModalOnBackground(ev)}>
       <TabletHamburgerDropdown modalFullSize={props.modalFullSize.toString()} hamburgeropen={props.hamburgerOpen} setHamburgerMenu={props.setHamburgerMenu}/>
       <PhoneHamburgerDropdown modalFullSize={props.modalFullSize.toString()} hamburgeropen={props.hamburgerOpen} setHamburgerMenu={props.setHamburgerMenu}/>
       <ContactSendPending pending={(props.contactModalType === props.contactModalTypes.pending)} />
-      <ContactSendSuccess success={(props.contactModalType === props.contactModalTypes.success)} />
-      <ContactSendFailure failure={(props.contactModalType === props.contactModalTypes.failure)} />
+      <ContactSendSuccess success={(props.contactModalType === props.contactModalTypes.success)} contactSuccessModalButton={props.contactSuccessModalButton} />
+      <ContactSendFailure failure={(props.contactModalType === props.contactModalTypes.failure)} contactFailureModalButton={props.contactFailureModalButton} contactError={props.contactError} />
     </DivWrapper>
   );
 };
