@@ -103,11 +103,6 @@ const H2ContactTitle = styled.div`
     margin-bottom: 10rem;
   }
 
-  @media (max-width: 3000px) {
-    font-size: 4.5rem;
-    margin-bottom: 10rem;
-  }
-
   @media (max-width: 2800px) {
     font-size: 4.2rem;
     margin-bottom: 9rem;

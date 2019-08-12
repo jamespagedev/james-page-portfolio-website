@@ -84,10 +84,6 @@ const LabelContact = styled.label`
     font-size: 4.5rem;
   }
 
-  @media (max-width: 3000px) {
-    font-size: 4.5rem;
-  }
-
   @media (max-width: 2900px) {
     font-size: 4rem;
   }
@@ -400,7 +396,7 @@ const ButtonContact = styled.button`
   &:hover {
     font-weight: bold;
 
-    @media (max-width: 900px) {
+    @media (max-width: ${rWidths.tablet}) {
       font-weight: normal;
     }
   }
@@ -422,10 +418,6 @@ const ButtonContact = styled.button`
   }
 
   @media (max-width: 3100px) {
-    font-size: 4.5rem;
-  }
-
-  @media (max-width: 3000px) {
     font-size: 4.5rem;
   }
 
@@ -487,7 +479,7 @@ const ButtonContact = styled.button`
     width: 27%;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: ${rWidths.phone}) {
     font-size: 3.2rem;
     padding: 1.5rem 0;
     width: 26%;
