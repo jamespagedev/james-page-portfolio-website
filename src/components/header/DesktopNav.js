@@ -39,7 +39,6 @@ const LinkNavItem = styled(Link)`
   &.active {
     color: ${Colors.Malibu};
     opacity: 0.7;
-    text-decoration: underline;
   }
   text-decoration: none;
   user-select: none;

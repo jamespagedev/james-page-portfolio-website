@@ -158,7 +158,7 @@ class App extends Component {
   handleSend = ev => {
     ev.preventDefault();
     const contactData = this.state.contactData;
-    // this.setContactMessageModal(true, 'success');
+    // this.setContactMessageModal(true, 'pending');
     this.sendContact(ev, contactData);
   }
 
