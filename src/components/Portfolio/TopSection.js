@@ -319,8 +319,8 @@ const TopSection = props => {
       <DivIntro id="home-phone">
         <H3Intro>Greetings, thank you for taking the time to visit my portfolio. I'm a full stack developer who enjoys working in all areas.</H3Intro>
         <hr style={{width: '76%', height: '0.3rem', backgroundColor: 'white', margin: '3rem 0 4.5rem'}} />
-        <PDetail currentfocus>Current focus:<span>JavaScript, React/Redux, styled&nbsp;components, nodjs, express, knex</span></PDetail>
-        <PDetail exploring>Exploring:<span>django, aws, docker</span></PDetail>
+        <PDetail currentfocus>Current focus:<span>JavaScript, React/Redux, styled-components, nodeJS, express, knex</span></PDetail>
+        <PDetail exploring>Exploring:<span>django, AWS, docker</span></PDetail>
         <PDetail eventually>Eventually:<span>graphql, C#, ruby on rails, golang, gatsbyjs, sass, socket.io, flutter, hooks(react), feathers.js, goat, oauth2, jenkins, joi, dia, figma, pusher</span></PDetail>
         <PDetail education>Education:<span>Valedictorian, 4.0GPA, Perfect&nbsp;Attendance</span></PDetail>
         <CarouselEducation />
