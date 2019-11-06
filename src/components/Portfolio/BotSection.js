@@ -219,7 +219,8 @@ const BotSection = props => {
   return (
     <SectionBot id="contact">
       <DivContactSection>
-        <H2ContactTitle>Looking to gain a position where I can use my dev skills to build great software. Lets chat... </H2ContactTitle>
+        {/* <H2ContactTitle>Looking to gain a position where I can use my dev skills to build great software. Lets chat... </H2ContactTitle> */}
+        <H2ContactTitle>I am currently working a full time position and am not accepting offers at this time.</H2ContactTitle>
         <ContactForm {...props} />
       </DivContactSection>
       <DivSocialMediaSection>
