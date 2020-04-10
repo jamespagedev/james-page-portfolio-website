@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Card from './Card.js';
+import associatesDegree from "../../assets/img/associatesdegree.png";
+import bachelorsDegree from "../../assets/img/bachelorsdegree.png";
+import favoriteBooks from "../../assets/img/favoritebooks.png";
+import lambdaBadge from "../../assets/img/lambdabadge.png";
 
 // globals
 import { rWidths, Colors } from '../../globals/CssMixins.js';
@@ -9,19 +13,19 @@ import { rWidths, Colors } from '../../globals/CssMixins.js';
 const pictures = [
   {
     title: 'A.S. Degree',
-    picture: "associatesdegree"
+    picture: associatesDegree
   },
   {
     title: 'B.S. Degree',
-    picture: "bachelorsdegree"
+    picture: bachelorsDegree
   },
   {
     title: 'Favorite Books',
-    picture: "favoritebooks"
+    picture: favoriteBooks
   },
   {
     title: 'Code Bootcamp',
-    picture: "lambdabadge"
+    picture: lambdaBadge
   }
 ]
 const totalPictures = pictures.length;
@@ -139,6 +143,7 @@ class CarouselEducation extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <DivWrapper>
         <NavSelector>
@@ -147,7 +152,6 @@ class CarouselEducation extends Component {
           <ButtonSelector type="button" onClick={ev => this.setImgIndex(ev, 2)} selected={(this.state.index === 2)}>{pictures[2].title}</ButtonSelector>
           <ButtonSelector type="button" onClick={ev => this.setImgIndex(ev, 3)} selected={(this.state.index === 3)}>{pictures[3].title}</ButtonSelector>
         </NavSelector>
-        {/* <H1Title>{pictures[this.state.index].title}</H1Title> */}
         <Card property={pictures[this.state.index]}/>
       </DivWrapper>
     );

@@ -13,7 +13,7 @@ const Card = ({property}) => {
   const {picture} = property;
   return (
       <DivWrapper>
-          <img src={require(`../../assets/img/${picture}.png`)} draggable="false" alt='card' />
+          <img src={picture} draggable="false" alt='card' />
       </DivWrapper>
   )
 }
