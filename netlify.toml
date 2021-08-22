@@ -8,7 +8,7 @@
 [build]
   base    = "./"
   publish = "./build"
-  command = "yarn build"
+  command = "npm build"
 
 [[redirects]]
   from = "/*"
