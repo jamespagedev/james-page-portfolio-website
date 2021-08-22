@@ -8,7 +8,7 @@
 [build]
   base    = "./"
   publish = "./build"
-  command = "npm build"
+  command = "npm run build"
 
 [[redirects]]
   from = "/*"
