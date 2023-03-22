@@ -1,18 +1,36 @@
-import React, { useState } from 'react';
+import React from "react";
 
-// components
-
-function HeaderPhone() {
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+function NavPhone({ isHamburgerOpen, setIsHamburgerOpen }) {
   return (
-    <nav className="nav-phone">
-      <div className="div-header-hamburger" onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}>
-        <span style={isHamburgerOpen ? {transition: "0.4s", top:"1rem", transform:"rotate(-45deg)"} : {}} />
-        <span style={isHamburgerOpen ? {visibility:"hidden"} : {visibility:"visible"}} />
-        <span style={isHamburgerOpen ? {transition: "0.4s", top:"-1rem", transform:"rotate(45deg)"} : {}} />
+    <div className="div-phone">
+      <div
+        className="div-header-hamburger"
+        onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
+      >
+        <span
+          style={
+            isHamburgerOpen
+              ? { transition: "0.4s", top: "1rem", transform: "rotate(-45deg)" }
+              : {}
+          }
+        />
+        <span
+          style={
+            isHamburgerOpen
+              ? { visibility: "hidden" }
+              : { visibility: "visible" }
+          }
+        />
+        <span
+          style={
+            isHamburgerOpen
+              ? { transition: "0.4s", top: "-1rem", transform: "rotate(45deg)" }
+              : {}
+          }
+        />
       </div>
-    </nav>
+    </div>
   );
 }
 
-export default HeaderPhone;
+export default NavPhone;
