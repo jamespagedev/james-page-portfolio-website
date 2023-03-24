@@ -62,13 +62,17 @@ function Header() {
         >
           Skills
         </Link>
-        <a
-          href="/#"
+        <Link
+          to="resumes"
+          spy={true}
+          smooth={true}
+          duration={500}
           className="header-nav-link"
+          activeClass="header-nav-link--active"
           onClick={() => setIsHamburgerOpen(false)}
         >
           Resumes
-        </a>
+        </Link>
         <a
           href="/#"
           className="header-nav-link"

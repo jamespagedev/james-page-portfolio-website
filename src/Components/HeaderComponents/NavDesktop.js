@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-scroll';
+import React from "react";
+import { Link } from "react-scroll";
 
 function NavDesktop() {
   return (
@@ -44,8 +44,19 @@ function NavDesktop() {
       >
         Skills
       </Link>
-      <a href="/#" className="header-nav-link">Resumes</a>
-      <a href="/#" className="header-nav-link">Contact</a>
+      <Link
+        to="resumes"
+        spy={true}
+        smooth={true}
+        duration={500}
+        className="header-nav-link"
+        activeClass="header-nav-link--active"
+      >
+        Resumes
+      </Link>
+      <a href="/#" className="header-nav-link">
+        Contact
+      </a>
     </nav>
   );
 }
