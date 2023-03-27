@@ -7,6 +7,7 @@ import About from "./Pages/About.js";
 import Projects from "./Pages/Projects.js";
 import Skills from "./Pages/Skills.js";
 import Resumes from "./Pages/Resumes.js";
+import Contact from "./Pages/Contact.js";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Projects />
       <Skills />
       <Resumes />
+      <Contact />
     </div>
   );
 }

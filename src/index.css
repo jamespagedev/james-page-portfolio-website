@@ -1647,6 +1647,156 @@ img {
   transition: box-shadow 200ms ease-in-out;
 }
 
+/*========================== Contact ==========================*/
+.div-contact {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  padding: 15vh 10vw;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.div-contact-container {
+  display: flex;
+  width: 100%;
+  max-width: 1500px;
+  flex: 1;
+  margin: 0 auto;
+  border: 2px ridge #ffffff;
+  background-color: #000000;
+  box-shadow: 11px 11px 19px 0px #ecd7af;
+}
+.div-contact-container-left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-right: 2px ridge #ffffff;
+  background-color: black;
+  padding: 4vh 5vw;
+}
+.div-contact-left-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3vh;
+}
+.div-contact-container-left img {
+  width: 200px;
+}
+.div-contact-left-top p {
+  text-align: center;
+}
+.div-contact-container-left p {
+  color: #ffffff;
+  line-height: 3rem;
+}
+.div-contact-container-left p:first-child {
+  color: #ffffff;
+  text-align: center;
+}
+.div-contact-left-bottom {
+  position: relative;
+  margin: auto;
+}
+.div-contact-container-left h1 {
+  color: #ffffff;
+}
+.div-contact-long-arrow {
+  position: absolute;
+  top: 6px;
+  right: -120px;
+  height: 20px;
+  width: 100px;
+  background-color: #ffffff;
+}
+.div-contact-long-arrow::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid #ffffff;
+}
+.div-contact-container-right {
+  width: 45vw;
+  max-width: 500px;
+}
+.div-contact-container-right div {
+  position: relative;
+  width: 100%;
+  height: 33.33%;
+  background-color: #000000;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.div-contact-container-right a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+.div-contact-container-right div:first-child {
+  background-image: url("./img/linkedin-background.jpg");
+}
+.div-contact-container-right div:nth-child(2) {
+  background-image: url("./img/github-background.jpg");
+}
+.div-contact-container-right div:last-child {
+  background-image: url("./img/email-background.jpg");
+}
+.div-contact-container-right div::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    #ecd7af 0%,
+    rgba(183, 158, 112, 0) 100%
+  );
+  opacity: 0;
+}
+.div-contact-container-right div:hover::before {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+.div-contact-container-right a h3 {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 100px;
+  padding: 8px 16px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1.4rem;
+  user-select: none;
+}
+.div-contact-container-right a:hover h3 {
+  border: 1px solid #1e90ff;
+  background: linear-gradient(180deg, #1e90ff 0, #0a2647);
+  transition: background-color 0.3s ease-in-out;
+}
+.div-contact-container-right a:active h3 {
+  border: 1px solid #1e90ff;
+  background: linear-gradient(180deg, #0a2647 0, #1e90ff);
+  transition: background-color 0.3s ease-in-out;
+}
+
 /*=============================================================*/
 /*=============================================================*/
 /*===================== Responsive Design =====================*/
@@ -1671,7 +1821,7 @@ img {
 /*=============================================================*/
 /*============================ 1500 ===========================*/
 /*=============================================================*/
-/* @media(max-width: 1500px) {} */
+/* @media (max-width: 1500px) {} */
 
 /*=============================================================*/
 /*============================ 1300 ===========================*/
@@ -1834,6 +1984,81 @@ img {
   .div-resume-container:last-child .resume-btn-span {
     margin-left: 0;
     align-self: center;
+  }
+  /*========================== Contact ==========================*/
+  .div-contact-container {
+    flex-direction: column;
+  }
+  .div-contact-container-left {
+    height: auto;
+    border-right: none;
+    border-bottom: 2px ridge #ffffff;
+  }
+  .div-contact-left-bottom {
+    position: relative;
+    margin: auto;
+    margin: 50px auto 200px;
+  }
+  .div-contact-long-arrow {
+    position: absolute;
+    right: 78px;
+    height: 100px;
+    width: 20px;
+    margin-top: 70px;
+    background-color: #ffffff;
+  }
+  .div-contact-long-arrow::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    width: 0;
+    height: 0;
+    margin-top: 105px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid #ffffff;
+  }
+  .div-contact-container-right {
+    width: 100%;
+    max-width: none;
+  }
+  .div-contact-container-right div {
+    height: 20vh;
+  }
+  .div-contact-container-right div::before {
+    opacity: 1;
+  }
+  .div-contact-container-right a {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    width: 100px;
+    height: auto;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid #1e90ff;
+    background: linear-gradient(180deg, #1e90ff 0, #0a2647);
+  }
+  .div-contact-container-right a:hover {
+    transition: none;
+  }
+  .div-contact-container-right a:active {
+    background: linear-gradient(180deg, #0a2647 0, #1e90ff);
+  }
+  .div-contact-container-right a h3 {
+    position: initial;
+    width: auto;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    color: #ffffff;
+    font-size: 1.4rem;
+  }
+  .div-contact-container-right a:hover h3 {
+    border: none;
+    background: none;
+    transition: none;
   }
 }
 @keyframes bounce-arrow-before-1200 {
@@ -2732,6 +2957,27 @@ img {
     flex-basis: auto;
     width: 100%;
   }
+  /*========================== Contact ==========================*/
+  .div-contact-container-left img {
+    width: 150px;
+  }
+  .div-contact-container-left p {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+  }
+  .div-contact-container-left h1 {
+    font-size: 2.8rem;
+  }
+  .div-contact-left-bottom {
+    margin-bottom: 170px;
+  }
+  .div-contact-long-arrow {
+    right: 66px;
+    height: 80px;
+  }
+  .div-contact-long-arrow::after {
+    margin-top: 85px;
+  }
 }
 
 /*=============================================================*/
@@ -3087,6 +3333,10 @@ img {
   }
   .bubble-postgresql {
     left: 52%;
+  }
+  /*========================== Contact ==========================*/
+  .div-contact-container {
+    box-shadow: none;
   }
 }
 

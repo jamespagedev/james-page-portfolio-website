@@ -73,13 +73,17 @@ function Header() {
         >
           Resumes
         </Link>
-        <a
-          href="/#"
+        <Link
+          to="contact"
+          spy={true}
+          smooth={true}
+          duration={500}
           className="header-nav-link"
+          activeClass="header-nav-link--active"
           onClick={() => setIsHamburgerOpen(false)}
         >
           Contact
-        </a>
+        </Link>
       </HamburgerDropdown>
     </header>
   );

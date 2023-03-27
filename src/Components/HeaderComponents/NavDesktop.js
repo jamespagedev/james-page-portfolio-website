@@ -54,9 +54,16 @@ function NavDesktop() {
       >
         Resumes
       </Link>
-      <a href="/#" className="header-nav-link">
+      <Link
+        to="contact"
+        spy={true}
+        smooth={true}
+        duration={500}
+        className="header-nav-link"
+        activeClass="header-nav-link--active"
+      >
         Contact
-      </a>
+      </Link>
     </nav>
   );
 }
